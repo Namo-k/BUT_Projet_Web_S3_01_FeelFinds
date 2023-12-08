@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8/>
+    <link rel="icon" href="../img/icon.png" type="image/x-icon">
+    <title>FeelFinds</title>
+    <!--js-->
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <!--css-->
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+</head>
+
+<body>
+    <!--onglet sur la gauche-->
+    <div id="onglet">
+        <div id="ban">
+            <img src="../img/logo.png" width="190px">
+        </div>
+            <div id="containerWidget">
+                <h3 id="txtSlogan">Slogan lorem lorem</h3>
+                <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>
+            <div class="ongletContaint">
+                <div class="ssOnglet">
+                    <img src="img/pap.png" class="icone">
+                    <h3 id="txtSlogan"> Chercher mon itinéraire</h3>
+                </div>
+                <p>Aller à un endroit en particulier ?</p>
+
+                <div class="ssOngletContaint">
+                    <label> Départ : </label>
+                    <input type="text" placeholder="Départ" class="inputH"> </br>
+                    <label> Arrivée : </label>
+                    <input type="text" placeholder="Arrivée" class="inputH">
+                </div>
+                <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>
+
+                <div class="ssOnglet">
+                    <img src="img/sent.png" class="icone">
+                    <h3 id="txtSlogan"> Filtrer par sentiment</h3>
+                </div>
+                <p>Chercher un sentiment en particulier ?</p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>
+
+                <div class="ssOnglet">
+                    <img src="img/sent.png" class="icone">
+                    <h3 id="txtSlogan"> Filtrer par sentiment</h3>
+                </div>
+                <p>Chercher un sentiment en particulier ?</p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>
+                <div class="ssOnglet">
+                    <img src="img/sent.png" class="icone">
+                    <h3 id="txtSlogan"> Filtrer par sentiment</h3>
+                </div>
+                <p>Chercher un sentiment en particulier ?</p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>
+            </div>
+        </div>
+    </div>
+
+    <!--appli carte-->
+    <div id='map'></div>
+    <script>
+        L.mapbox.accessToken = 'pk.eyJ1IjoibG91IiwiYSI6IkJDYlg3REEifQ.9BLp9eUdT11kUy1jgujSsQ'; var map = L.mapbox.map('map')
+            .setView([48.8509588, 2.3084927], 13)
+            .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+        L.marker([48.8509588, 2.3084927]).addTo(map);
+
+        map.on('click', function (e) {
+            console.log(e.latlng); // e is an event object (MouseEvent in this case)
+            L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+        });
+    </script>
+</body>
+
+
+
+</html>

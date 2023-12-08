@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#onglet{
+    z-index: 2;
+    position: absolute;
+    width: 26.5%;
+    height: 100vh;
+    background-image: linear-gradient(#094e8fc0,#094e8fc0,rgba(150, 150, 53, 0.679));
+}
+
+.ongletContaint{
+    overflow:scroll;
+    max-height: 500px;
+}
+
+#ban{
+    background-color: rgb(255, 255, 255);
+    width: 55%;
+    margin-top: 7%;
+    margin-left: 18%;
+    padding: 2% 2% 2% 7%;
+    margin-right: auto;
+    border-radius: 17px;
+}
+
+#containerWidget{
+    text-align: center;
+    color: white;
+}
+
+#txtSlogan{
+    margin-bottom: -5%;
+}
+
+.icone{
+    width:50px;
+    height:50px;
+    margin-right: 2.6%;
+}
+.ssOnglet{
+    display: flex;
+    margin-left: 14%;
+}
+.ssOngletContaint{
+    margin-left: -20%;
+}
+.inputH{
+    color: white;
+    border-radius: 8px;
+}
+
+
+/* bouton zoom */
+.leaflet-bar{
+   display: none;
+}
+/* mapbox logo en bas a gauche */
+.mapbox-logo-true {
+    display: none;
+}
+/* mapbox credits en bas a droite */
+.leaflet-container .leaflet-control-attribution {
+    display: none;
+}
+/* 
+.leaflet-control-container > .leaflet-top .leaflet-left  > .leaflet-control-zoom .leaflet-bar .leaflet-control{
+    position: fixed; 
+    right: 20px;
+    bottom: 20px;
+}  */
