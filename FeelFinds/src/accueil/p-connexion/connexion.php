@@ -8,7 +8,7 @@
     <link id="favicon" rel="icon" href="../img/icon2.png" type="image/png" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/config.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <?php 
