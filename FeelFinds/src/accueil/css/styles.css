@@ -15,7 +15,7 @@ body {
 
 #container-home{
     height: 108%;
-    background-image: linear-gradient(to top,rgba(188, 188, 188, 0.641),rgba(157, 77, 77, 0.504));
+    background-image: linear-gradient(to top,rgba(75, 87, 138, 0.641),rgba(101, 81, 81, 0.504));
 }
 
 .container-first {
@@ -99,11 +99,10 @@ h1 span {
     width: 74px;
     height: 74px;
     border-radius: 50%;
-    border: 1px solid #f1f1f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 14px 0;
     background: #ff0000ae;
     cursor: pointer;
     position: relative;
@@ -135,10 +134,9 @@ section{
   }
   
   section h2{
-    font-size: 40px;
+    font-size: 2.2em;
     text-transform: uppercase;
     margin-bottom: 1%;
-    text-decoration: underline;
   }
   section .text-container{
      display: flex;
@@ -152,7 +150,7 @@ section{
     background: #ad2525c9;
   }
   section .text-container .text-box h3{
-    font-size: 30px;
+    font-size: 1.6em;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 14px;
