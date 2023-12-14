@@ -26,63 +26,64 @@ L.marker([e.latlng.lat, e.latlng.lng]).remove();
 
 
 $.ajax({
-type: 'GET',
-url: 'data/zones-touristiques-internationales.json',
-dataType: 'json',
-success: function (data) {
-    data.forEach(function (location) {
-        // console.log(location);
-        if (location['geometry']) {
-            var coordinates = location.geometry.coordinates.reverse();
-            var marker = L.marker(coordinates).addTo(map);
-
-            var popupContent = '<b>' + location.fields.name + '</b>';
-            marker.bindPopup(popupContent);
-        }
-    });
-},
-error: function (error) {
-    console.error('Erreur lors du chargement du fichier JSON:', error);
-}
-});
-
-var markers = L.markerClusterGroup();
-
-$.ajax({
-type: 'GET',
-url: 'data/baseCulturel.json',
-dataType: 'json',
-success: function (data) {
-    var chunkSize = 100; // Définissez la taille de la page
-    var currentPage = 0;
-
-    function loadMarkers() {
-        var start = currentPage * chunkSize;
-        var end = start + chunkSize;
-
-        data.slice(start, end).forEach(function (location) {
+    type: 'GET',
+    url: 'json/zones-touristiques-internationales.json',
+    dataType: 'json',
+    success: function (data) {
+        data.forEach(function (location) {
+            // console.log(location);
             if (location['geometry']) {
                 var coordinates = location.geometry.coordinates.reverse();
-                var marker = L.marker(coordinates);
-                var popupContent = '<b>' + location.fields.nom + '</b>';
+                var marker = L.marker(coordinates).addTo(map);
+    
+                var popupContent = '<b>' + location.fields.name + '</b>';
                 marker.bindPopup(popupContent);
-                markers.addLayer(marker);
             }
         });
-
-        currentPage++;
-
-        if (currentPage * chunkSize < data.length) {
-            setTimeout(loadMarkers, 0); // Chargez la prochaine page après un délai pour ne pas bloquer l'interface utilisateur
-        }
-
-        map.addLayer(markers);
+    },
+    error: function (error) {
+        console.error('Erreur lors du chargement du fichier JSON:', error);
     }
+    });
 
-    loadMarkers();
-},
-error: function (error) {
-    console.error('Erreur lors du chargement du fichier JSON:', error);
-}
-});
+    var markers = L.markerClusterGroup();
 
+    $.ajax({
+    type: 'GET',
+    url: 'json/baseCulturel.json',
+    dataType: 'json',
+    success: function (data) {
+        var chunkSize = 100; // Définissez la taille de la page
+        var currentPage = 0;
+    
+        function loadMarkers() {
+            var start = currentPage * chunkSize;
+            var end = start + chunkSize;
+    
+            data.slice(start, end).forEach(function (location) {
+                if (location['geometry']) {
+                    var coordinates = location.geometry.coordinates.reverse();
+                    var marker = L.marker(coordinates);
+                    var popupContent = '<b>' + location.fields.nom + '</b>';
+                    marker.bindPopup(popupContent);
+                    markers.addLayer(marker);
+                }
+            });
+    
+            currentPage++;
+    
+            if (currentPage * chunkSize < data.length) {
+                setTimeout(loadMarkers, 0); // Chargez la prochaine page après un délai pour ne pas bloquer l'interface utilisateur
+            }
+    
+            map.addLayer(markers);
+        }
+    
+        loadMarkers();
+    },
+    error: function (error) {
+        console.error('Erreur lors du chargement du fichier JSON:', error);
+    }
+    });
+    
+    
