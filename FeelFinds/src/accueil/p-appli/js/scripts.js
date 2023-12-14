@@ -85,5 +85,10 @@ $.ajax({
         console.error('Erreur lors du chargement du fichier JSON:', error);
     }
     });
+
+
+   // Supprimer et ajouter au bon endrois le contrôle de zoom
+    map.zoomControl.remove();
+    var zoomControl = L.control.zoom({ position: 'bottomright' }).addTo(map);
     
     
