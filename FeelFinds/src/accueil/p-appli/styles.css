@@ -80,17 +80,17 @@ body {
 
 
 /* bouton zoom */
-.leaflet-bar{
+/*.leaflet-bar{
    display: none;
-}
+}*/
 /* mapbox logo en bas a gauche */
-.mapbox-logo-true {
+/*.mapbox-logo-true {
     display: none;
-}
+}*/
 /* mapbox credits en bas a droite */
-.leaflet-container .leaflet-control-attribution {
+/*.leaflet-container .leaflet-control-attribution {
     display: none;
-}
+}*/
 /* 
 .leaflet-control-container > .leaflet-top .leaflet-left  > .leaflet-control-zoom .leaflet-bar .leaflet-control{
     position: fixed; 
