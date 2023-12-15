@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#onglet{
+    position: absolute;
+    z-index: 2;
+    width: 27%;
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(#0F4A81,#274c6fd2,rgba(69, 89, 149, 0.679));
+
+    /*linear-gradient(to left , rgba(164, 172, 234, 0.754),rgba(237, 126, 126, 0.754));*/
+    background-color: rgba(230, 113, 113, 0.754);
+    color: white;
+}
+
+#logo{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 2% 2.5% 0% 2.5%;
+    border-radius: 21px;
+}
+
+#slogan{
+    font-family: 'Inter';
+    margin-top: 5%;
+    font-size: 18px;
+    margin-bottom: 6%;
+    font-weight: 300;
+}
+
+.line {
+    border-bottom: 1.7px solid rgb(232, 232, 232) ;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.sous_onglet_titre{
+    display: flex;
+    margin-left: 14%;
+    width: 73%;
+    height: 30.7%;
+    letter-spacing: 0.5px;
+}
+
+#sous_onglet_info {
+    width: 70%;
+    margin: 0 auto;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 14.5px;
+}
+
+.icone{
+    width: 38px;
+    height: 38px;
+    margin-top: 6%;
+    margin-right: 3%;
+}
+
+.icone_txt {
+    margin-top: 8%;
+    margin-left: 3%;
+    font-size: 21px;
+    font-family: 'Patua one', sans-serif;
+}
+
+#onglet_1 {
+    height: 210px;
+}
+
+.sous_onglet{
+    width: 80%;
+    margin-top: 5.5%;
+    margin-left: 10%;
+}
+
+.inputH{
+    margin-left: 4%;
+    color: #13528d;
+    border-radius: 11px;
+    border: rgb(236, 231, 231);
+    height: 25px;
+    width: 225px;
+}
+
+#depart {
+    margin-bottom: 6%;
+}
+
+#loupe1 {
+    position: absolute;
+    top: 33.5%;
+    right: 14%; 
+}
+
+#loupe2 {
+    position: absolute;
+    top: 39.2%;
+    right: 14%;
+}
+
+#input_depart::placeholder{
+    color: #13528d;
+    font-style: italic;
+}
+
+#input_arrive::placeholder{
+    color: #13528d;
+    font-style: italic;
+}
+
+#rectangle {
+    margin-top: 4%;
+    margin-left: 12%;
+    width: 75%;
+    height: 33px;
+    border-radius: 22px;
+    background: #74B1DD;
+}
+
+.emojis {
+    margin-left: 17px;
+    margin-top: 2.5px;
+    cursor: pointer;
+}
+
+#nom_sentiment {
+    font-size: 18px;
+    font-family: 'Patua one', sans-serif;
+    width: 50%;
+    margin: 17px auto;
+    letter-spacing: 1px;
+}
+
+#description_sentiment {
+    width: 76%;
+    margin: 18px auto;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+/*
+.ongletContaint{
+    position: relative;
+    overflow: scroll;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+
+.ongletContaint::-webkit-scrollbar {
+    width: 5.5px; 
+}
+  
+ .ongletContaint::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0);
+}
+  
+.ongletContaint::-webkit-scrollbar-thumb {
+    background-color: rgba(1, 1, 1, 0.471); 
+    border-radius: 20px; 
+}
+
+#containerWidget{
+    text-align: center;
+    color: white;
+}
+
+/* bouton zoom */
+.leaflet-bar{
+   display: none;
+}
+/* mapbox logo en bas a gauche */
+.mapbox-logo-true {
+    display: none;
+}
+/* mapbox credits en bas a droite */
+.leaflet-container .leaflet-control-attribution {
+    display: none;
+}
+/* 
+.leaflet-control-container > .leaflet-top .leaflet-left  > .leaflet-control-zoom .leaflet-bar .leaflet-control{
+    position: fixed; 
+    right: 20px;
+    bottom: 20px;
+}  */
