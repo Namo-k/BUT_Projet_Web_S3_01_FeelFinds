@@ -13,11 +13,10 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+    -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Patua One' rel='stylesheet'> -->
-
-
+    <link href='https://fonts.googleapis.com/css?family=Patua One' rel='stylesheet'>
+    <script src="https://api.mapbox.com/search/searchbox/v1/suggest?q={search_text}"></script>
 
 <!--js-->
 <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
@@ -42,18 +41,18 @@
                 <a href="index.html"><img src="images/logo.png" width="200px"></a>
             </div>
             <div id="slogan">
-                <p> Partages tes sentiments avec tes amis !</p>
+                <p id="typewriter"> P</p>
             </div>
             <div class="line"></div>
         </div>
 
-        <div class="ongletContaint">
+        <div id="ongletContaint">
             <div id="onglet_1">
                 <div class="sous_onglet_titre">
                     <img src="images/itineraire_logo.png" class="icone">
                     <p class="icone_txt"> Chercher mon itinéraire </p>
                 </div>
-                <p id="sous_onglet_info"> Aller à un endroit en particulier ? </p>
+                <p class="sous_onglet_info"> Aller à un endroit en particulier ? </p>
 
                 <div class="sous_onglet">
                     <div id="depart">
@@ -73,23 +72,23 @@
 
             <div id="onglet_2">
                 <div class="sous_onglet_titre">
-                    <img src="images/.png" class="icone">
+                    <img src="images/logo_sentiment.png" class="icone">
                     <p class="icone_txt"> Filtrer par sentiment </p>
                 </div>
-                <p id="sous_onglet_info"> Ressentir un sentiment particulier ? </p>
+                <p class="sous_onglet_info"> Ressentir un sentiment particulier ? </p>
 
                 <div class="emoji">
                     <div id="rectangle">
                         <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji1">
-                        <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji2">
-                        <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji3">
-                        <img src="images/emoji_parfait.png" width="26px" class="emojis" id="emoji4">
                         <img src="images/emoji_emotif.png" width="26px" class="emojis" id="emoji5">
+                        <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji3">
+                        <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji2">
+                        <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji4">
                         <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji6">
                     </div>
 
-                    <p id="nom_sentiment"> Nom du sentiment</p>
-                    <p id="description_sentiment"> Description du sentiment </p>
+                    <p id="nom_sentiment"> Testez ! </p>
+                    <p id="description_sentiment"> Choisissez un sentiment </p>
                 </div>
             </div>
 
@@ -98,31 +97,52 @@
             
             <div id="onglet_3">
                 <div class="sous_onglet_titre">
-                    <img src="images/.png" class="icone">
+                    <img src="images/logo_gerer.png" class="icone">
                     <p class="icone_txt"> Gérer un sentiment </p>
                 </div>
+                <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
+                <div class="choix">
+                    <p class ="bouton" id="ajouter"> Ajouter </p>
+                    <p class ="bouton"> Modifier </p>
+                    <p class ="bouton"> Supprimer </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="ongletAjouter">
+            <div class="sous_onglet_titre">
+                <img src="images/logo_gerer.png" class="icone">
+                <p class="icone_txt"> Gérer un sentiment </p>
+            </div>
+            <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
+
+            <div id="adresse">             
+                <p class="txtInfo"> &nbsp • &nbsp  Adresse du lieu : </p>
+                <div><input type="text" placeholder="  Choisissez votre lieu..." class="inputA" id="input_adresse"></div> </br>
             </div>
 
-            <!--<div class="ssOnglet">
-                <img src="images/sent.png" class="icone">
-                <h3 id="txtSlogan"> Filtrer par sentiment</h3>
+            <div id="sentiments">
+                <p class="txtInfo"> &nbsp • &nbsp  Choix du sentiment :  </p>
             </div>
-            <p>Chercher un sentiment en particulier ?</p>
-            <div class="line"></div>
+            <div class="emoji">
+                <div id="rectangle">
+                    <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji1">
+                    <img src="images/emoji_emotif.png" width="26px" class="emojis" id="emoji5">
+                    <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji3">
+                    <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji2">
+                    <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji4">
+                    <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji6">
+                </div>
 
-            <div class="ssOnglet">
-                <img src="images/sent.png" class="icone">
-                <h3 id="txtSlogan"> Filtrer par sentiment</h3>
+                <p id="nom_sentiment"> Nom du sentiment </p>
             </div>
-            <p>Chercher un sentiment en particulier ?</p>
-            <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>
 
-            <div class="ssOnglet">
-                <img src="images/sent.png" class="icone">
-                <h3 id="txtSlogan"> Filtrer par sentiment</h3>
+            <div id="description">
+                <p class="txtInfo"> &nbsp • &nbsp  Description du moment :  </p>
+                <div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br>
             </div>
-            <p>Chercher un sentiment en particulier ?</p>
-            <p style="font-family: Arial, Helvetica, sans-serif;">_________________________________</p>-->
+
+            <button class="btn"> Enregistrer </button>
         </div>
     </div>
 

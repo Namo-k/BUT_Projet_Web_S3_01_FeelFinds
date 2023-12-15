@@ -20,7 +20,6 @@ body {
     height: 100vh;
     text-align: center;
     background-image: linear-gradient(#0F4A81,#274c6fd2,rgba(69, 89, 149, 0.679));
-
     /*linear-gradient(to left , rgba(164, 172, 234, 0.754),rgba(237, 126, 126, 0.754));*/
     background-color: rgba(230, 113, 113, 0.754);
     color: white;
@@ -57,7 +56,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-#sous_onglet_info {
+.sous_onglet_info {
     width: 70%;
     margin: 0 auto;
     font-style: italic;
@@ -151,10 +150,111 @@ body {
     width: 76%;
     margin: 18px auto;
     letter-spacing: 0.5px;
+    margin-bottom: 6%;
+}
+
+.choix {
+    width:80%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+
+.bouton {
+    margin: 0px 20px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bouton:hover {
+    color: #375aab;
+    font-weight: 600;
+    transition: color 0.5s;
 }
 
 
+/* ------------- */
 
+.inputA{
+    margin-left: 4%;
+    color: #13528d;
+    border-radius: 11px;
+    border: rgb(236, 231, 231);
+    height: 28px;
+    width: 290px;
+    margin-top: 1%;
+}
+
+#input_adresse::placeholder{
+    color: #13528d;
+    font-style: italic;
+}
+
+#adresse {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+
+.txtInfo {
+    list-style-type: disc;
+    text-align: left;
+}
+
+#sentiments {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#description {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 8%;
+    margin-bottom: 1.5%;
+}
+
+.inputD{
+    margin-left: 4%;
+    color: #13528d;
+    border-radius: 11px;
+    border: rgb(236, 231, 231);
+    height: 150px;
+    width: 290px;
+    margin-top: 1%;
+}
+
+#input_desc::placeholder{
+    color: #13528d;
+    font-style: italic;
+}
+
+.btn {
+    width: 50%;
+    height: 35px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #2ba8fb;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    cursor: pointer;
+}
+  
+.btn:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+}
+  
+.btn:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
 
 /*
 .ongletContaint{
@@ -183,9 +283,9 @@ body {
 }
 
 /* bouton zoom */
-.leaflet-bar{
+/*.leaflet-bar{
    display: none;
-}
+}*/
 /* mapbox logo en bas a gauche */
 .mapbox-logo-true {
     display: none;
