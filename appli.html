@@ -24,7 +24,6 @@
 <link rel="stylesheet" href="css/appli.css">
 <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
 
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
@@ -57,13 +56,17 @@
                 <div class="sous_onglet">
                     <div id="depart">
                         <label> Départ  :  </label>
-                        <input type="text" placeholder="  Choisissez un point de départ..." class="inputH" id="input_depart"> </br>
-                        <img src="images/loupe.png" id="loupe1" width="20px">
+                        <div id="barre">
+                            <input type="text" placeholder="  Choisissez un point de départ..." class="inputH" id="input_depart"> </br>
+                            <img src="images/loupe.png" class="loupe">
+                        </div>
                     </div>
-                    <div>
+                    <div id="arrivee">
                         <label for="arrive"> Arrivée  :  </label>
-                        <input type="text" placeholder="  Choisissez une destination..." class="inputH" id="input_arrive">
-                        <img src="images/loupe.png" id="loupe2" width="20px">
+                        <div id="barre">
+                            <input type="text" placeholder="  Choisissez une destination..." class="inputH" id="input_arrive">
+                            <img src="images/loupe.png" class="loupe">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,12 +82,12 @@
 
                 <div class="emoji">
                     <div id="rectangle">
-                        <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji1">
-                        <img src="images/emoji_emotif.png" width="26px" class="emojis" id="emoji5">
-                        <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji3">
-                        <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji2">
-                        <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji4">
-                        <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji6">
+                        <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_epoustouflant">
+                        <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_triste">
+                        <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_amour">
+                        <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_joyeux">
+                        <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_emouvant">
+                        <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_festif">
                     </div>
 
                     <p id="nom_sentiment"> Testez ! </p>
@@ -102,7 +105,7 @@
                 </div>
                 <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
                 <div class="choix">
-                    <p class ="bouton" id="ajouter"> Ajouter </p>
+                    <p class ="bouton" id="btn_ajouter"> Ajouter </p>
                     <p class ="bouton"> Modifier </p>
                     <p class ="bouton"> Supprimer </p>
                 </div>
@@ -126,23 +129,26 @@
             </div>
             <div class="emoji">
                 <div id="rectangle">
-                    <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji1">
-                    <img src="images/emoji_emotif.png" width="26px" class="emojis" id="emoji5">
-                    <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji3">
-                    <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji2">
-                    <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji4">
-                    <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji6">
+                    <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_2epoustouflant">
+                    <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_2triste">
+                    <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_2amour">
+                    <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_2joyeux">
+                    <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_2emouvant">
+                    <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_2festif">
                 </div>
 
-                <p id="nom_sentiment"> Nom du sentiment </p>
+                <p id="nom_sentiment2"> Nom du sentiment </p>
             </div>
 
             <div id="description">
                 <p class="txtInfo"> &nbsp • &nbsp  Description du moment :  </p>
-                <div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br>
+                <!--<div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br> -->
+
+                <div><textarea id="input_desc" class="inputD" placeholder="Describe yourself here..." name="description" rows="5" cols="33"> </textarea></div>
             </div>
 
             <button class="btn"> Enregistrer </button>
+            <img src="images/btn_retour.png" width="30px" id="btn_retour" >
         </div>
     </div>
 

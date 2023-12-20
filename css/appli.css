@@ -94,24 +94,38 @@ body {
     border-radius: 11px;
     border: rgb(236, 231, 231);
     height: 25px;
-    width: 225px;
+    width: 240px;
 }
 
 #depart {
+    display: flex;
     margin-bottom: 6%;
+    margin-left: 2%;
 }
 
-#loupe1 {
-    position: absolute;
-    top: 33.5%;
-    right: 14%; 
+#arrivee {
+    display: flex;
+    margin-bottom: 6%;
+    margin-left: 2%;
 }
 
-#loupe2 {
+#barre {
+    display: flex;
+    margin-left: 2%;
+}
+
+.loupe {
+    margin-left: -25px;
+    cursor: pointer;
+    width : 20px;
+    height: 24px;
+}
+
+/* #loupe2 {
     position: absolute;
     top: 39.2%;
     right: 14%;
-}
+} */
 
 #input_depart::placeholder{
     color: #13528d;
@@ -146,6 +160,14 @@ body {
     letter-spacing: 1px;
 }
 
+#nom_sentiment2 {
+    font-size: 18px;
+    font-family: 'Patua one', sans-serif;
+    width: 50%;
+    margin: 17px auto;
+    letter-spacing: 1px;
+}
+
 #description_sentiment {
     width: 76%;
     margin: 18px auto;
@@ -168,9 +190,9 @@ body {
 }
 
 .bouton:hover {
-    color: #375aab;
+    color: #74B1DD;
     font-weight: 600;
-    transition: color 0.5s;
+    transition: 0.5s;
 }
 
 
@@ -210,8 +232,8 @@ body {
 #description {
     width: 80%;
     margin: 0 auto;
-    margin-top: 8%;
-    margin-bottom: 1.5%;
+    margin-top: 7%;
+    margin-bottom: 1.2%;
 }
 
 .inputD{
@@ -219,7 +241,7 @@ body {
     color: #13528d;
     border-radius: 11px;
     border: rgb(236, 231, 231);
-    height: 150px;
+    height: 140px;
     width: 290px;
     margin-top: 1%;
 }
@@ -227,11 +249,12 @@ body {
 #input_desc::placeholder{
     color: #13528d;
     font-style: italic;
-}
+} 
 
 .btn {
     width: 50%;
     height: 35px;
+    margin-top: 2.5%;
     border: 0;
     border-radius: 100px;
     background-color: #2ba8fb;
@@ -254,6 +277,13 @@ body {
     -webkit-transition: all 0.25s;
     box-shadow: none;
     transform: scale(0.98);
+}
+
+#btn_retour {
+    position: absolute;
+    left: 85%;
+    margin-top: 2.5%;
+    cursor: pointer;
 }
 
 /*
