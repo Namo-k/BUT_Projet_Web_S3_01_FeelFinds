@@ -21,7 +21,7 @@ else{
 <div class="conteneur-login">
     <div class="login-wrap" style="background:white;border-radius: 20px 0px 0px 20px;">
 
-                <a href="index.html"><img src="../images/logo.png" width="240" height="78" style="margin-left: 26%; position:absolute; z-index:2;margin-top:2%;margin-bottom:2%;"/></a>
+                <a href="../index.html"><img src="../images/logo.png" width="240" height="78" style="margin-left: 26%; position:absolute; z-index:2;margin-top:2%;margin-bottom:2%;"/></a>
 
         <div class="login-html" style="border-radius: 20px 0 0 20px;">
             <input id="tab-1" type="radio" name="tab" class="sign-in" onclick="changeTitle()" checked><label for="tab-1" class="tab" style="margin-top:2%;">Se connecter</label>
@@ -34,7 +34,7 @@ else{
                     <form method="POST" action="login.php">
                         <div class="group">
                             <label for="user" class="label">Nom d'utilisateur ou mail</label>
-                            <input id="user"placeholder="Nom d'utilisateur ou mail" type="text" class="input" name="id">
+                            <input id="user" placeholder="Nom d'utilisateur ou mail" type="text" class="input" name="id">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Mot de passe</label>

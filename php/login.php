@@ -18,6 +18,7 @@ if (isset($_POST['submit'])){
         if(password_verify($mdp,$data[0]["password"])){
             echo "Connexion effectuée avec le mail";
             $_SESSION['id'] = $user_pseudo;
+            header("Location:../appli.php?nom=".$_SESSION['id']."");
         }
         else{
             echo "Mot de passe erronnée. ";
@@ -33,6 +34,7 @@ if (isset($_POST['submit'])){
             if(password_verify($mdp,$data[0]["password"])){
                 echo "Connexion effectuée avec le pseudo";
                 $_SESSION['id'] = $id;
+                header("Location:../appli.php?nom=".$_SESSION['id']."");
             }
             else{
                 echo "Mot de passe erronnée. ";
