@@ -41,6 +41,7 @@
          <?php } else { ?>
                 <p id='nameSession'><?php echo "vide"; ?></p>
          <?php } ?>
+         <a href="php/connexion.php">Se deconnecter</a>
         </div>
         <div id="presentation">
             <div id="logo">

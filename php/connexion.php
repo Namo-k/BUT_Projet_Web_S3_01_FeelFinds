@@ -12,10 +12,10 @@
 </head>
 <body>
 <?php 
-if (isset($_SESSION['id'])){
-    echo "Vous êtes bien connecté en tant que:" .$_SESSION['id'];
-}
-else{
+// if (isset($_SESSION['id'])){
+//     echo "Vous êtes bien connecté en tant que:" .$_SESSION['id'];
+// }
+// else{
 ?>
 
 <div class="conteneur-login">
@@ -34,11 +34,11 @@ else{
                     <form method="POST" action="login.php">
                         <div class="group">
                             <label for="user" class="label">Nom d'utilisateur ou mail</label>
-                            <input id="user" placeholder="Nom d'utilisateur ou mail" type="text" class="input" name="id">
+                            <input id="user" placeholder="Nom d'utilisateur ou mail" type="text" class="input" name="id" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Mot de passe</label>
-                            <input id="pass" placeholder="Mot de passe" type="password" class="input" data-type="password" name="mdp">
+                            <input id="pass" placeholder="Mot de passe" type="password" class="input" data-type="password" name="mdp" required>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Se connecter" name="submit">
@@ -65,15 +65,15 @@ else{
                     <form method="POST" action="login.php">
                         <div class="group">
                             <label for="user" class="label">Pseudo</label>
-                            <input id="user" placeholder="Pseudonyme" type="text" class="input" name="pseudoInscr">
+                            <input id="user" placeholder="Pseudonyme" type="text" class="input" name="pseudoInscr" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Adresse mail</label>
-                            <input id="pass" placeholder="Adresse mail" type="text" class="input" name="mailInscr">
+                            <input id="pass" placeholder="Adresse mail" type="text" class="input" name="mailInscr" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Mot de passe</label>
-                            <input id="pass" placeholder="Mot de passe" type="password" class="input" data-type="password" name="mdpInscr">
+                            <input id="pass" placeholder="Mot de passe" type="password" class="input" data-type="password" name="mdpInscr" required>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="S'inscrire">
@@ -93,7 +93,7 @@ else{
 </div>
 
     <?php
-}
+// }
 ?>
 <script type="text/javascript">
     const fav = document.getElementById("favicon");
