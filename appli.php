@@ -33,16 +33,24 @@
 </head>
 
 <body>
+    <div id="profil"> 
+        <div id="pseudo">
+            <div id="login">
+                <?php if(isset($_GET['nom'])) { ?>
+                        <p id='nameSession'>@<?php echo $_GET['nom']; ?></p>
+                <?php } else { ?>
+                        <p id='nameSession'><?php echo "vide"; ?></p>
+                <?php } ?>
+            </div>
+            <p id="niveau"> Niveau : Superstar </p>
+        </div>
+            <div id="photo"><img src="images/connexion.png" width="60px"></div>
+    </div>
+
     <!--onglet sur la gauche-->
     <div id="onglet">
-        <div id="login">
-         <?php if(isset($_GET['nom'])) { ?>
-                <p id='nameSession'><?php echo $_GET['nom']; ?></p>
-         <?php } else { ?>
-                <p id='nameSession'><?php echo "vide"; ?></p>
-         <?php } ?>
-         <a href="php/connexion.php">Se deconnecter</a>
-        </div>
+
+        
         <div id="presentation">
             <div id="logo">
                 <a href="index.html"><img src="images/logo.png" width="200px"></a>
@@ -118,6 +126,9 @@
                     <p class ="bouton"> Supprimer </p>
                 </div>
             </div>
+
+            <div id="deconnexion"> <a href="php/connexion.php"> Se deconnecter </a> </div>
+
         </div>
 
         <div id="ongletAjouter">

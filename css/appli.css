@@ -13,6 +13,47 @@ body {
     width: 100%;
 }
 
+
+#profil {
+    position:absolute;
+    display: flex;
+    align-items: center;  
+    z-index: 5;
+    width: 20%;
+    left: 78.5%;
+}
+
+#login {
+    font-family: 'Patua One';
+    font-size : 18px;
+    text-align: center;
+    color: white;
+}
+
+#nameSession {
+    margin-block-start: 10px;
+    margin-block-end: 1px;
+}
+
+#niveau {
+    font-size : 15px;
+    text-align: center;
+    color: white;
+    margin: 7px 0px;
+}
+
+#pseudo {
+    background-color: #135B9F;
+    border-radius: 17px;
+    margin: 20px 18px;
+    width: 80%;
+    height: 70px; 
+}
+
+#photo {
+    width: 20%;
+}
+
 #onglet{
     position: absolute;
     z-index: 2;
@@ -179,7 +220,7 @@ body {
     width:80%;
     display: flex;
     margin: 0 auto;
-    margin-top: 7%;
+    margin-top: 5%;
 }
 
 .bouton {
@@ -195,6 +236,13 @@ body {
     transition: 0.5s;
 }
 
+#deconnexion {
+    width: 30%;
+    position: absolute;
+    right: 5%;
+    margin-top: 2.2%;
+    font-size: 15px;
+}
 
 /* ------------- */
 
