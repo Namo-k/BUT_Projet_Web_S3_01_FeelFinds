@@ -45,7 +45,21 @@
             <?php } ?>
 
         </div>
-        <div id="photo"><img src="images/connexion.png" width="60px"></div>
+        <?php if (isset($_SESSION['id'])) { ?>
+            <nav>
+                <li> <a href="#">
+                        <div id="photoAvatar"><img src="images/connexion.png" width="60px"></div>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Profil</a></li>
+                        <li><a href="php/deconnexion.php">Déconnexion</a></li>
+                    </ul>
+                </li>
+            </nav>
+        <?php } else { ?>
+            <div id="photoAvatar"><img src="images/connexion.png" width="60px"></div>
+        <?php } ?>
+
     </div>
 
     <!--onglet sur la gauche-->
@@ -128,13 +142,11 @@
                     </div>
                 </div>
 
-                <div id="deconnexion"> <a href="php/deconnexion.php"> Se déconnecter </a> </div>
-
             <?php } else { ?>
             <?php } ?>
-            </div>
+        </div>
 
-            <div id="ongletAjouter">
+        <div id="ongletAjouter">
             <div class="sous_onglet_titre">
                 <img src="images/logo_gerer.png" class="icone">
                 <p class="icone_txt"> Gérer un sentiment </p>
