@@ -34,10 +34,16 @@
                 <?php if (isset($_SESSION['id'])) { ?>
                     <p id='nameSession'>@<?php echo $_SESSION['id']; ?></p>
                 <?php } else { ?>
-                    <p id='nameSession'><?php echo "vide"; ?></p>
+                    <p id='nameSession'><?php echo "Invité"; ?></p>
                 <?php } ?>
             </div>
-            <p id="niveau"> Niveau : Superstar </p>
+
+            <?php if (isset($_SESSION['id'])) { ?>
+                <p id="niveau"> Niveau : Superstar </p>
+            <?php } else { ?>
+                <p id='nameSession' style="text-align:center;"> <a href="php/connexion.php" style="color: white; text-decoration: none;"> Connecte toi ! </p>
+            <?php } ?>
+
         </div>
         <div id="photo"><img src="images/connexion.png" width="60px"></div>
     </div>
@@ -108,25 +114,27 @@
 
             <div class="line"></div>
 
+            <?php if (isset($_SESSION['id']) == 1) { ?>
+                <div id="onglet_3">
+                    <div class="sous_onglet_titre">
+                        <img src="images/logo_gerer.png" class="icone">
+                        <p class="icone_txt"> Gérer un sentiment </p>
+                    </div>
+                    <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
+                    <div class="choix">
+                        <p class="bouton" id="btn_ajouter"> Ajouter </p>
+                        <p class="bouton"> Modifier </p>
+                        <p class="bouton"> Supprimer </p>
+                    </div>
+                </div>
 
-            <div id="onglet_3">
-                <div class="sous_onglet_titre">
-                    <img src="images/logo_gerer.png" class="icone">
-                    <p class="icone_txt"> Gérer un sentiment </p>
-                </div>
-                <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
-                <div class="choix">
-                    <p class="bouton" id="btn_ajouter"> Ajouter </p>
-                    <p class="bouton"> Modifier </p>
-                    <p class="bouton"> Supprimer </p>
-                </div>
+                <div id="deconnexion"> <a href="php/deconnexion.php"> Se déconnecter </a> </div>
+
+            <?php } else { ?>
+            <?php } ?>
             </div>
 
-            <div id="deconnexion"> <a href="php/deconnexion.php"> Se deconnecter </a> </div>
-
-        </div>
-
-        <div id="ongletAjouter">
+            <div id="ongletAjouter">
             <div class="sous_onglet_titre">
                 <img src="images/logo_gerer.png" class="icone">
                 <p class="icone_txt"> Gérer un sentiment </p>
