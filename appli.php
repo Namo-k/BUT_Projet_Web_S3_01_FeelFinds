@@ -122,7 +122,7 @@
                 </div>
             </div>
 
-            <div id="deconnexion"> <a href="php/connexion.php"> Se deconnecter </a> </div>
+            <div id="deconnexion"> <a href="php/deconnexion.php"> Se deconnecter </a> </div>
 
         </div>
 
