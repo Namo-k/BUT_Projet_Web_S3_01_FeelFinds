@@ -1,63 +1,55 @@
 <?php
 session_start();
 
-if (isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $mdp = $_POST['mdp'];
-    
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds','root','');
+
+    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
 
     $sql = "SELECT * FROM user where mail ='$id'";
     $result = $db->prepare($sql);
     $result->execute();
 
-    if($result->rowCount()>0){ //trouvé avec l'adresse mail
+    if ($result->rowCount() > 0) { //trouvé avec l'adresse mail
         $data = $result->fetchAll();
         $user_pseudo = $data[0]["pseudo"];
 
-        if(password_verify($mdp,$data[0]["password"])){
-            echo "Connexion effectuée avec le mail";
-            $_SESSION['id'] = $user_pseudo;
-            header("Location:../appli.php?nom=".$_SESSION['id']."");
-        }
-        else{
+        if (password_verify($mdp, $data[0]["password"])) {
+            $_SESSION['id'] = $pseudo;
+            header("Location:../appli.php?nom=" . $_SESSION['id'] . "");
+        } else {
             echo "Mot de passe erronnée. ";
         }
-    }
-    else{ //non trouvé avec l'adresse mail, on test avec le pseudo
+    } else { //non trouvé avec l'adresse mail, on test avec le pseudo
         $sql = "SELECT * FROM user where pseudo ='$id'";
         $result = $db->prepare($sql);
         $result->execute();
 
-        if($result->rowCount()>0){//trouvé avec le pseudo
+        if ($result->rowCount() > 0) { //trouvé avec le pseudo
             $data = $result->fetchAll();
-            if(password_verify($mdp,$data[0]["password"])){
-                echo "Connexion effectuée avec le pseudo";
+            if (password_verify($mdp, $data[0]["password"])) {
                 $_SESSION['id'] = $id;
-                header("Location:../appli.php?nom=".$_SESSION['id']."");
-            }
-            else{
+                header("Location:../appli.php");
+            } else {
                 echo "Mot de passe erronnée. ";
             }
-        }
-        else{
+        } else {
             echo "Nom d'utilisateur ou mail incorrecte.";
         }
     }
-}
-else{
+} else {
 
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds','root','');
+    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
 
     $mail = $_POST['mailInscr'];
     $pseudo = $_POST['pseudoInscr'];
     $pass = $_POST['mdpInscr'];
-    $pass = password_hash($pass,PASSWORD_DEFAULT);
+    $_SESSION['id'] = $pseudo;
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO user (mail,pseudo,password) VALUES ('$mail','$pseudo','$pass')";
     $req = $db->prepare($sql);
     $req->execute();
 
-    echo "Utilisateur inscrit :)";
+    header("Location:../appli.php");
 }
-
-?>
