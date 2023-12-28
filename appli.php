@@ -1,5 +1,7 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="images/icon2.png" type="image/x-icon">
@@ -7,50 +9,43 @@
     <link rel="stylesheet" href="css/appli.css">
     <script src="js/appli.js"></script>
 
-    <!-- <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet'/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Patua One' rel='stylesheet'>
     <script src="https://api.mapbox.com/search/searchbox/v1/suggest?q={search_text}"></script>
 
-<!--js-->
-<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-<!--css-->
-<link rel="stylesheet" href="css/appli.css">
-<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <!--js-->
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <!--css-->
+    <link rel="stylesheet" href="css/appli.css">
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
 </head>
 
 <body>
-    <div id="profil"> 
+    <div id="profil">
         <div id="pseudo">
             <div id="login">
-                <?php if(isset($_GET['nom'])) { ?>
-                        <p id='nameSession'>@<?php echo $_GET['nom']; ?></p>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <p id='nameSession'>@<?php echo $_SESSION['id']; ?></p>
                 <?php } else { ?>
-                        <p id='nameSession'><?php echo "vide"; ?></p>
+                    <p id='nameSession'><?php echo "vide"; ?></p>
                 <?php } ?>
             </div>
             <p id="niveau"> Niveau : Superstar </p>
         </div>
-            <div id="photo"><img src="images/connexion.png" width="60px"></div>
+        <div id="photo"><img src="images/connexion.png" width="60px"></div>
     </div>
 
     <!--onglet sur la gauche-->
     <div id="onglet">
 
-        
+
         <div id="presentation">
             <div id="logo">
                 <a href="index.html"><img src="images/logo.png" width="200px"></a>
@@ -71,14 +66,14 @@
 
                 <div class="sous_onglet">
                     <div id="depart">
-                        <label> Départ  :  </label>
+                        <label> Départ : </label>
                         <div id="barre">
                             <input type="text" placeholder="  Choisissez un point de départ..." class="inputH" id="input_depart"> </br>
                             <img src="images/loupe.png" class="loupe">
                         </div>
                     </div>
                     <div id="arrivee">
-                        <label for="arrive"> Arrivée  :  </label>
+                        <label for="arrive"> Arrivée : </label>
                         <div id="barre">
                             <input type="text" placeholder="  Choisissez une destination..." class="inputH" id="input_arrive">
                             <img src="images/loupe.png" class="loupe">
@@ -113,7 +108,7 @@
 
             <div class="line"></div>
 
-            
+
             <div id="onglet_3">
                 <div class="sous_onglet_titre">
                     <img src="images/logo_gerer.png" class="icone">
@@ -121,9 +116,9 @@
                 </div>
                 <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
                 <div class="choix">
-                    <p class ="bouton" id="btn_ajouter"> Ajouter </p>
-                    <p class ="bouton"> Modifier </p>
-                    <p class ="bouton"> Supprimer </p>
+                    <p class="bouton" id="btn_ajouter"> Ajouter </p>
+                    <p class="bouton"> Modifier </p>
+                    <p class="bouton"> Supprimer </p>
                 </div>
             </div>
 
@@ -138,13 +133,13 @@
             </div>
             <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
 
-            <div id="adresse">             
-                <p class="txtInfo"> &nbsp • &nbsp  Adresse du lieu : </p>
+            <div id="adresse">
+                <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
                 <div><input type="text" placeholder="  Choisissez votre lieu..." class="inputA" id="input_adresse"></div> </br>
             </div>
 
             <div id="sentiments">
-                <p class="txtInfo"> &nbsp • &nbsp  Choix du sentiment :  </p>
+                <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
             </div>
             <div class="emoji">
                 <div id="rectangle">
@@ -160,14 +155,14 @@
             </div>
 
             <div id="description">
-                <p class="txtInfo"> &nbsp • &nbsp  Description du moment :  </p>
+                <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
                 <!--<div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br> -->
 
                 <div><textarea id="input_desc" class="inputD" placeholder="Describe yourself here..." name="description" rows="5" cols="33"> </textarea></div>
             </div>
 
             <button class="btn"> Enregistrer </button>
-            <img src="images/btn_retour.png" width="30px" id="btn_retour" >
+            <img src="images/btn_retour.png" width="30px" id="btn_retour">
         </div>
     </div>
 
@@ -175,7 +170,5 @@
     <div id='map'></div>
     <script src="js/scriptsMarkeur.js"></script>
 </body>
-
-
 
 </html>
