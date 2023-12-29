@@ -1,0 +1,137 @@
+
+body{
+    background-color: rgb(250, 250, 250);
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* NAVBAR */
+
+nav{
+    display: flex;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.679),rgba(23, 78, 154, 0.386),rgba(255, 255, 255, 0.195));
+    padding: 30px;
+}
+
+nav ul{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+nav li{
+    display: inline-block;
+}
+
+nav a{
+    display: block;
+    font-size: 1.2em;
+    padding: 20px 40px;
+}
+
+
+nav > ul > li:hover a{
+    transition: all 0.4s ease-in-out;
+    padding: 20px 40px 15px 40px;
+    color: white;
+    border-color: #d50000;
+    text-decoration: underline red;
+}
+
+#logo{
+    margin-left: 1%;
+}
+
+nav > #logo img{
+    float: left;
+    width: 260px;
+    height : 80px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 65px;
+    color: #c90000c4;
+    font-family: Abril fatface, sans-serif;
+}
+h1 span {
+    position: relative;
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+}
+#btnNav{
+    width: 400px;
+    float: right;
+    margin-left: 5%;
+}
+
+.btn-first {
+    
+    width: 200px;
+    border: 2px solid #f1f1f1;
+    margin-left: 49%;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    padding: 7px;
+    color: #f1f1f1;
+    cursor: pointer;
+    background-color: #1a3be09f;
+}
+
+.btn-first:hover {
+    transition: all 0.3s ease-in-out;
+    background: #f1f1f1;
+    color: #333;
+}
+
+
+#container{
+    margin-top: 1%;
+    display: flex;
+    height: 50%;
+}
+#infoContainer{
+    width: 60%;
+    margin-left: 4%;
+}
+
+.btn-2 {
+    margin-top: 1%;
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+    outline: none;
+    font-size: 20px;
+    padding: 15px;
+    width: 270px;
+    color: #f1f1f1;
+    cursor: pointer;
+    background-color: #1a3be09f;
+}
+
+.btn-2:hover {
+    transition: all 0.3s ease-in-out;
+    background: #f1f1f1;
+    color: #333;
+}
+
+#mapContainer{
+    margin-top: 1%;
+    width: 30%;
+    margin-left: -6%;
+}
+#mapContainer img{
+    width: 530px;
+    height: 530px;
+}
