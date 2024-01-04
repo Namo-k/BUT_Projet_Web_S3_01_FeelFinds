@@ -6,6 +6,10 @@ body {
     font-family: 'Inter';
 }
 
+.hidden{
+    display: none;
+}
+
 #map {
     position: absolute;
     top: 0;
@@ -55,17 +59,17 @@ body {
     width: 20%;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
 
-nav a{
+nav a {
     display: block;
 }
 
 
-.sub-menu{
+.sub-menu {
     display: none;
     margin-left: 55%;
     margin-top: -6%;
@@ -82,11 +86,11 @@ nav li:hover .sub-menu {
     z-index: 4;
 }
 
-.sub-menu li{
+.sub-menu li {
     border-bottom: 1px solid rgb(255, 255, 255);
 }
 
-.sub-menu li a{
+.sub-menu li a {
     border-radius: 10px;
     padding: 15px 30px;
     font-size: 1em;
@@ -95,28 +99,31 @@ nav li:hover .sub-menu {
     text-align: center;
 }
 
-.sub-menu li{
+.sub-menu li {
     border-radius: 10px 4px 2px 10px;
     background-color: rgb(143, 0, 0);
 }
 
 
-.sub-menu li:hover a{
+.sub-menu li:hover a {
     background-color: rgba(218, 8, 8, 0.756);
-    color:  white;
+    color: white;
 }
 
 
 #onglet {
-    position: absolute;
+    position: relative;
     z-index: 2;
-    width: 27%;
+    width: 25%;
     height: 100vh;
     text-align: center;
     background-image: linear-gradient(#0F4A81, #274c6fd2, rgba(69, 89, 149, 0.679));
     /*linear-gradient(to left , rgba(164, 172, 234, 0.754),rgba(237, 126, 126, 0.754));*/
     background-color: rgba(230, 113, 113, 0.754);
     color: white;
+    border-right: 1px solid white;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 #logo {
@@ -270,9 +277,11 @@ nav li:hover .sub-menu {
 }
 
 .choix {
-    width: 80%;
+    /* width: 80%; */
     display: flex;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0 auto; */
     margin-top: 5%;
 }
 
@@ -403,3 +412,52 @@ nav li:hover .sub-menu {
     right: 20px;
     bottom: 20px;
 }  */
+
+#menuOnglet {
+    display: flex;
+}
+
+
+#ongletAvis {
+    position: relative;
+    z-index: 2;
+    width: 350px;
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(#0F4A81, #274c6fd2, rgba(69, 89, 149, 0.679));
+    background-color: rgba(230, 113, 113, 0.754);
+    color: white;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: none;
+}
+
+.traitBlanc {
+    height: 1px;
+    width: 50px;
+    background-color: white;
+    display: block;
+    margin: auto;
+}
+
+#traitBlanc1 {
+    height: 3px;
+    width: 150px;
+    background-color: white;
+    display: block;
+    margin: auto;
+}
+
+#ferme{
+    cursor: pointer;
+}
+
+#nbrSentiment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nbrSentiment > .emojis{
+    margin: 0;
+}

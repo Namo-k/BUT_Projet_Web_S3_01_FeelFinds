@@ -11,7 +11,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Patua One' rel='stylesheet'>
-    <script src="https://api.mapbox.com/search/searchbox/v1/suggest?q={search_text}"></script>
+    <!-- <script src="https://api.mapbox.com/search/searchbox/v1/suggest?q={search_text}"></script> -->
 
     <!--js-->
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
@@ -63,127 +63,163 @@
     </div>
 
     <!--onglet sur la gauche-->
-    <div id="onglet">
+    <div id="menuOnglet">
+        <div id="onglet">
 
-
-        <div id="presentation">
-            <div id="logo">
-                <a href="index.html"><img src="images/logo.png" width="200px"></a>
-            </div>
-            <div id="slogan">
-                <p id="typewriter"> P</p>
-            </div>
-            <div class="line"></div>
-        </div>
-
-        <div id="ongletContaint">
-            <div id="onglet_1">
-                <div class="sous_onglet_titre">
-                    <img src="images/itineraire_logo.png" class="icone">
-                    <p class="icone_txt"> Chercher mon itinéraire </p>
+            <div id="presentation">
+                <div id="logo">
+                    <a href="index.html"><img src="images/logo.png" width="200px"></a>
                 </div>
-                <p class="sous_onglet_info"> Aller à un endroit en particulier ? </p>
-
-                <div class="sous_onglet">
-                    <div id="depart">
-                        <label> Départ : </label>
-                        <div id="barre">
-                            <input type="text" placeholder="  Choisissez un point de départ..." class="inputH" id="input_depart"> </br>
-                            <img src="images/loupe.png" class="loupe">
-                        </div>
-                    </div>
-                    <div id="arrivee">
-                        <label for="arrive"> Arrivée : </label>
-                        <div id="barre">
-                            <input type="text" placeholder="  Choisissez une destination..." class="inputH" id="input_arrive">
-                            <img src="images/loupe.png" class="loupe">
-                        </div>
-                    </div>
+                <div id="slogan">
+                    <p id="typewriter"> P</p>
                 </div>
+                <div class="line"></div>
             </div>
-
-            <div class="line"></div>
-
-            <div id="onglet_2">
-                <div class="sous_onglet_titre">
-                    <img src="images/logo_sentiment.png" class="icone">
-                    <p class="icone_txt"> Filtrer par sentiment </p>
-                </div>
-                <p class="sous_onglet_info"> Ressentir un sentiment particulier ? </p>
-
-                <div class="emoji">
-                    <div id="rectangle">
-                        <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_epoustouflant">
-                        <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_triste">
-                        <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_amour">
-                        <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_joyeux">
-                        <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_emouvant">
-                        <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_festif">
-                    </div>
-
-                    <p id="nom_sentiment"> Testez ! </p>
-                    <p id="description_sentiment"> Choisissez un sentiment </p>
-                </div>
-            </div>
-
-            <div class="line"></div>
-
-            <?php if (isset($_SESSION['id']) == 1) { ?>
-                <div id="onglet_3">
+    
+            <div id="ongletContaint">
+                <div id="onglet_1">
                     <div class="sous_onglet_titre">
-                        <img src="images/logo_gerer.png" class="icone">
-                        <p class="icone_txt"> Gérer un sentiment </p>
+                        <img src="images/itineraire_logo.png" class="icone">
+                        <p class="icone_txt"> Chercher mon itinéraire </p>
                     </div>
-                    <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
-                    <div class="choix">
-                        <p class="bouton" id="btn_ajouter"> Ajouter </p>
-                        <p class="bouton"> Modifier </p>
-                        <p class="bouton"> Supprimer </p>
+                    <p class="sous_onglet_info"> Aller à un endroit en particulier ? </p>
+    
+                    <div class="sous_onglet">
+                        <div id="depart">
+                            <label> Départ : </label>
+                            <div id="barre">
+                                <input type="text" placeholder="  Choisissez un point de départ..." class="inputH" id="input_depart"> </br>
+                                <img src="images/loupe.png" class="loupe">
+                            </div>
+                        </div>
+                        <div id="arrivee">
+                            <label for="arrive"> Arrivée : </label>
+                            <div id="barre">
+                                <input type="text" placeholder="  Choisissez une destination..." class="inputH" id="input_arrive">
+                                <img src="images/loupe.png" class="loupe">
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-            <?php } else { ?>
-            <?php } ?>
-        </div>
-
-        <div id="ongletAjouter">
-            <div class="sous_onglet_titre">
-                <img src="images/logo_gerer.png" class="icone">
-                <p class="icone_txt"> Gérer un sentiment </p>
-            </div>
-            <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
-
-            <div id="adresse">
-                <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
-                <div><input type="text" placeholder="  Choisissez votre lieu..." class="inputA" id="input_adresse"></div> </br>
-            </div>
-
-            <div id="sentiments">
-                <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
-            </div>
-            <div class="emoji">
-                <div id="rectangle">
-                    <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_2epoustouflant">
-                    <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_2triste">
-                    <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_2amour">
-                    <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_2joyeux">
-                    <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_2emouvant">
-                    <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_2festif">
+    
+                <div class="line"></div>
+    
+                <div id="onglet_2">
+                    <div class="sous_onglet_titre">
+                        <img src="images/logo_sentiment.png" class="icone">
+                        <p class="icone_txt"> Filtrer par sentiment </p>
+                    </div>
+                    <p class="sous_onglet_info"> Ressentir un sentiment particulier ? </p>
+    
+                    <div class="emoji">
+                        <div id="rectangle">
+                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_epoustouflant">
+                            <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_triste">
+                            <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_amour">
+                            <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_joyeux">
+                            <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_emouvant">
+                            <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_festif">
+                        </div>
+    
+                        <p id="nom_sentiment"> Testez ! </p>
+                        <p id="description_sentiment"> Choisissez un sentiment </p>
+                    </div>
                 </div>
-
-                <p id="nom_sentiment2"> Nom du sentiment </p>
+    
+                <div class="line"></div>
+    
+                <?php if (isset($_SESSION['id']) == 1) { ?>
+                    <div id="onglet_3">
+                        <div class="sous_onglet_titre">
+                            <img src="images/logo_gerer.png" class="icone">
+                            <p class="icone_txt"> Gérer un sentiment </p>
+                        </div>
+                        <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
+                        <div class="choix">
+                            <p class="bouton" id="btn_ajouter"> Ajouter un sentiment</p>
+                            <p class="bouton" id="btn_modifierSupprimer"> Modifier ou Supprimer </p>
+                            <!-- <p class="bouton"> Supprimer </p> -->
+                        </div>
+                    </div>
+    
+                <?php } else { ?>
+                <?php } ?>
             </div>
+    
+            <div id="ongletAjouter">
+                <div class="sous_onglet_titre">
+                    <img src="images/logo_gerer.png" class="icone">
+                    <p class="icone_txt"> Gérer un sentiment </p>
+                </div>
+                <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
+    
+                <form action="php/ajoutSentiment.php" method="post">
 
-            <div id="description">
-                <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
-                <!--<div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br> -->
+                    <div id="adresse">
+                        <!-- Lat  : <input type="text" placeholder=" Choisissez votre lieu..." class="inputA" id="input1"><br><br>
+                        Lon  : <input type="text" placeholder="  Choisissez votre lieu..." class="inputA" id="input2"><br><br>
+                
+                        <p>__________</p> -->
+    
+                        <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
+                        <!-- <div><input type="text" name="nomMarqueur" placeholder="  Choisissez votre lieu..." class="inputA" id="input_adresse"></div> </br> -->
+                        <div>
+                            <select name="nomMarqueur" class="inputA" id="input_adresse">
+                                <option value="">Choisissez votre lieu...</option>
+                            </select>
+                        </div>
+                   
+                    </div>
+        
+                    <div id="sentiments">
+                        <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
+                    </div>
+                    <div class="emoji">
+                        <div id="rectangle">
+                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_2epoustouflant">
+                            <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_2triste">
+                            <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_2amour">
+                            <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_2joyeux">
+                            <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_2emouvant">
+                            <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_2festif">
+                        </div>
+        
+                        <p id="nom_sentiment2"> Nom du sentiment </p>
+                    </div>
+        
+                    <div id="description">
+                        <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
+                        <!--<div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br> -->
+        
+                        <div><textarea id="input_desc" class="inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                    </div>
+        
+                    <button class="btn"> Enregistrer </button>
+                    <img src="images/btn_retour.png" width="30px" id="btn_retour">
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden" id="inputSentiment"><br><br>
 
-                <div><textarea id="input_desc" class="inputD" placeholder="Describe yourself here..." name="description" rows="5" cols="33"> </textarea></div>
+                </form>
+
             </div>
-
-            <button class="btn"> Enregistrer </button>
-            <img src="images/btn_retour.png" width="30px" id="btn_retour">
+    
         </div>
+
+        <div id="ongletAvis">
+            <p id="ferme">< Retour</p>
+            <h3>Info marqueur </h3>
+            <p id="nomMarqueur">Nom marqueur</p>
+            <!-- <div id="nbrAvis"></div> -->
+            <div id="onglatAvisContent">
+                <div id="nbrSentiment"></div>
+            </div>
+            <div id="traitBlanc1"></div>
+            <div id="avis" >
+                <p id="sentiment">Sentiment</p>
+                <p id="avis">Avis</p> 
+                <p id="personne">Personne</p>  
+            </div>
+        </div>
+
     </div>
 
     <!--appli carte-->

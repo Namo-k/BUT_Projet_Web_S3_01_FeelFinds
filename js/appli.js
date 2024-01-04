@@ -30,6 +30,7 @@ window.onload = function () {
         });
     }
 
+
     document.getElementById("btn_ajouter").addEventListener("click", ajouter);
     document.getElementById("btn_retour").addEventListener("click", retour);
 }
@@ -41,12 +42,16 @@ function modifier(nom, desc) {
 
 function modifier2(nom) {
     document.getElementById("nom_sentiment2").innerHTML = nom;
+    document.getElementById("inputSentiment").value = nom;
 }
 
 
 function init() {
     document.getElementById("ongletContaint").style.display = "block";
     document.getElementById("ongletAjouter").style.display = "none";
+
+    // document.getElementById("ongletContaint").style.display = "none";
+    // document.getElementById("ongletAjouter").style.display = "block";
 }
 
 function ajouter() {
