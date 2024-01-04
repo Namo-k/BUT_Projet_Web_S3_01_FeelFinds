@@ -112,16 +112,16 @@
                     <p class="sous_onglet_info"> Ressentir un sentiment particulier ? </p>
     
                     <div class="emoji">
-                        <div id="rectangle">
-                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_epoustouflant">
-                            <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_triste">
-                            <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_amour">
-                            <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_joyeux">
-                            <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_emouvant">
-                            <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_festif">
+                        <div class="rectangle">
+                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis emoji_epoustouflant">
+                            <img src="images/emoji_triste.png" width="26px" class="emojis emoji_triste">
+                            <img src="images/emoji_amour.png" width="26px" class="emojis emoji_amour">
+                            <img src="images/emoji_joyeux.png" width="26px" class="emojis emoji_joyeux">
+                            <img src="images/emoji_emouvant.png" width="26px" class="emojis emoji_emouvant">
+                            <img src="images/emoji_festif.png" width="26px" class="emojis emoji_festif">
                         </div>
     
-                        <p id="nom_sentiment"> Testez ! </p>
+                        <p class="nom_sentiment"> Testez ! </p>
                         <p id="description_sentiment"> Choisissez un sentiment </p>
                     </div>
                 </div>
@@ -138,9 +138,10 @@
                         <div class="choix">
                             <p class="bouton" id="btn_ajouter"> Ajouter un sentiment</p>
                             <p class="bouton" id="btn_modifierSupprimer"> Modifier ou Supprimer </p>
-                            <!-- <p class="bouton"> Supprimer </p> -->
+                            <p class="bouton"> Consulter Favori </p>
                         </div>
                     </div>
+                    
     
                 <?php } else { ?>
                 <?php } ?>
@@ -175,16 +176,16 @@
                         <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
                     </div>
                     <div class="emoji">
-                        <div id="rectangle">
-                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis" id="emoji_2epoustouflant">
-                            <img src="images/emoji_triste.png" width="26px" class="emojis" id="emoji_2triste">
-                            <img src="images/emoji_amour.png" width="26px" class="emojis" id="emoji_2amour">
-                            <img src="images/emoji_joyeux.png" width="26px" class="emojis" id="emoji_2joyeux">
-                            <img src="images/emoji_emouvant.png" width="26px" class="emojis" id="emoji_2emouvant">
-                            <img src="images/emoji_festif.png" width="26px" class="emojis" id="emoji_2festif">
+                        <div class="rectangle">
+                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis emoji_epoustouflant">
+                            <img src="images/emoji_triste.png" width="26px" class="emojis emoji_triste">
+                            <img src="images/emoji_amour.png" width="26px" class="emojis emoji_amour">
+                            <img src="images/emoji_joyeux.png" width="26px" class="emojis emoji_joyeux">
+                            <img src="images/emoji_emouvant.png" width="26px" class="emojis emoji_emouvant">
+                            <img src="images/emoji_festif.png" width="26px" class="emojis emoji_festif">
                         </div>
         
-                        <p id="nom_sentiment2"> Nom du sentiment </p>
+                        <p class="nom_sentiment"> Nom du sentiment </p>
                     </div>
         
                     <div id="description">
@@ -208,10 +209,9 @@
             <p id="ferme">< Retour</p>
             <h3>Info marqueur </h3>
             <p id="nomMarqueur">Nom marqueur</p>
-            <!-- <div id="nbrAvis"></div> -->
-            <div id="onglatAvisContent">
-                <div id="nbrSentiment"></div>
-            </div>
+            <div id="nbrAvis"></div>
+            <div id="nbrSentiment"></div>
+            
             <div id="traitBlanc1"></div>
             <div id="avis" >
                 <p id="sentiment">Sentiment</p>
