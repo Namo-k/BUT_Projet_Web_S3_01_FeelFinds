@@ -42,6 +42,7 @@ function init() {
 
 function ajouter() {
     document.getElementById("ongletContaint").style.display = "none";
+    document.getElementById("ongletAvis").style.display = "none";
     document.getElementById("ongletAjouter").style.display = "block";
 }
 
