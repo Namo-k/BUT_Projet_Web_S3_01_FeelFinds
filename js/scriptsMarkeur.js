@@ -373,24 +373,7 @@ function onMarkerClick(nom_) {
                 }
             }
 
-
-            $('.supprimer-avis').on('click', function () {
-                var idSentiment = $(this).data('idSentiment');
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'php/supprimerAvis.php',
-                    data: { idSentiment: idSentiment },
-                    success: function (response) {
-                        console.log('Avis supprimé avec succès');
-                        console.log(response);
-                        window.location.reload();
-                    },
-                    error: function (error) {
-                        console.error('Erreur lors de la suppression de l\'avis:', error);
-                    }
-                });
-            });
+            $('.supprimer-avis').on('click', supprimerAvis);
         },
         error: function (error) {
             console.error('Erreur lors de la requête AJAX:', error);
@@ -488,29 +471,44 @@ $('#btn_modifierSupprimer').on('click', function () {
             
             $('#nbrAvis').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
 
-            $('.supprimer-avis').on('click', function () {
-                var idSentiment = $(this).data('idSentiment');
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'php/supprimerAvis.php',
-                    data: { idSentiment: idSentiment },
-                    success: function (response) {
-                        console.log('Avis supprimé avec succès');
-                        console.log(response);
-                        window.location.reload();
-                    },
-                    error: function (error) {
-                        console.error('Erreur lors de la suppression de l\'avis:', error);
-                    }
-                });
-            });
+            $('.supprimer-avis').on('click', supprimerAvis);
+            
         },
         error: function (error) {
             console.error('Erreur lors de la requête AJAX pour récupérer les avis de l\'utilisateur:', error);
         }
     });
 });
+
+
+function supprimerAvis() {
+    // Récupérer l'ID de l'avis à supprimer
+    var idSentiment = $(this).data('idSentiment');
+
+    // Demander une confirmation avant la suppression
+    var confirmation = confirm('Voulez-vous vraiment supprimer cet avis?');
+
+    if (confirmation) {
+        // Si l'utilisateur clique sur "OK", effectuer la suppression
+        $.ajax({
+            type: 'POST',
+            url: 'php/supprimerAvis.php',
+            data: { idSentiment: idSentiment },
+            success: function (response) {
+                console.log('Avis supprimé avec succès');
+                console.log(response);
+                window.location.reload();
+            },
+            error: function (error) {
+                console.error('Erreur lors de la suppression de l\'avis:', error);
+            }
+        });
+    } else {
+        // Si l'utilisateur clique sur "Annuler", ne rien faire
+        console.log('Suppression annulée par l\'utilisateur');
+    }
+}
+
 
 
 //Pour centrer la carte sur le marqueur avec le nom selectionné
