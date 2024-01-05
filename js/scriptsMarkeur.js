@@ -465,6 +465,7 @@ $('#btn_modifierSupprimer').on('click', function () {
             $('#nomMarqueur').text('Avis de ' + data.sessionName);
             
             $('#nbrSentiment').empty();
+            $('#nbrAvis').empty();
 
             $('#avis').empty();
 
