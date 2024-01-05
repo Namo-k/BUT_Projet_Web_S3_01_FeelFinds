@@ -421,7 +421,7 @@ $.ajax({
 
 function getImagePath(sentiment) {
     switch (sentiment.toLowerCase()) {
-        case 'époustouflant':
+        case 'epoustouflant':
             return 'images/emoji_epoustouflant.png';
         case 'triste':
             return 'images/emoji_triste.png';
@@ -429,7 +429,7 @@ function getImagePath(sentiment) {
             return 'images/emoji_amour.png';
         case 'joyeux':
             return 'images/emoji_joyeux.png';
-        case 'émouvant':
+        case 'emouvant':
             return 'images/emoji_emouvant.png';
         case 'festif':
             return 'images/emoji_festif.png';
