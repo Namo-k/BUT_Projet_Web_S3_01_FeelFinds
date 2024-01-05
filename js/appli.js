@@ -57,6 +57,7 @@ function retour() {
     document.getElementById("ongletContaint").style.display = "block";
     document.getElementById("ongletAjouter").style.display = "none";
     document.getElementById("ongletModifier").style.display = "none";
+    document.getElementById("ongletAjouterMarqueur").style.display = "none";
 }
 
 function typeWriter() {
