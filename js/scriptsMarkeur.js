@@ -329,11 +329,11 @@ function onMarkerClick(nom_) {
             $('#nbrSentiment').empty();
             
             var counts = {
-                'époustouflant': 0,
+                'epoustouflant': 0,
                 'triste': 0,
                 'amour': 0,
                 'joyeux': 0,
-                'émouvant': 0,
+                'emouvant': 0,
                 'festif': 0
             };
 
