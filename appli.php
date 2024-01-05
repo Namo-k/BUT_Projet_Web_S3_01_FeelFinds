@@ -189,8 +189,57 @@
                     </div>
         
                     <button class="btn"> Enregistrer </button>
-                    <img src="images/btn_retour.png" width="30px" id="btn_retour">
+                    <img src="images/btn_retour.png" width="30px" class="btn_retour">
                     <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
+
+                </form>
+
+            </div>
+
+
+            <div id="ongletModifier">
+                <div class="sous_onglet_titre">
+                    <img src="images/logo_gerer.png" class="icone">
+                    <p class="icone_txt"> Gérer un sentiment </p>
+                </div>
+                <p class="sous_onglet_info"> Envie de modifier votre sentithèque? </p>
+    
+                <form action="php/modifierSentiment.php" method="post">
+                     
+                    <div class="adresse">
+
+                        <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
+                        <div>
+                            <input readonly type="text" name="nomMarqueur" placeholder="  Choisissez votre lieu..." class="inputA input_adresse"><br><br>      
+                        </div>
+                   
+                    </div>
+        
+                    <div class="sentiments">
+                        <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
+                    </div>
+                    <div class="emoji">
+                        <div class="rectangle">
+                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis emoji_epoustouflant">
+                            <img src="images/emoji_triste.png" width="26px" class="emojis emoji_triste">
+                            <img src="images/emoji_amour.png" width="26px" class="emojis emoji_amour">
+                            <img src="images/emoji_joyeux.png" width="26px" class="emojis emoji_joyeux">
+                            <img src="images/emoji_emouvant.png" width="26px" class="emojis emoji_emouvant">
+                            <img src="images/emoji_festif.png" width="26px" class="emojis emoji_festif">
+                        </div>
+        
+                        <p class="nom_sentiment"> Nom du sentiment </p>
+                    </div>
+        
+                    <div class="description">
+                        <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>        
+                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                    </div>
+        
+                    <button class="btn"> Modifier </button>
+                    <img src="images/btn_retour.png" width="30px" class="btn_retour">
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
+                    <input type="text" name="idSentiment" placeholder="id sentiment" class="inputA hidden inputIdSentiment"><br><br>
 
                 </form>
 

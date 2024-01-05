@@ -26,13 +26,15 @@ window.onload = function () {
     }
 
     document.getElementById("btn_ajouter").addEventListener("click", ajouter);
-    document.getElementById("btn_retour").addEventListener("click", retour);
+    // $("#btn_modifierSupprimer").click(modifier);
+    $(".btn_retour").click(retour);
 }
 
 
 function init() {
     document.getElementById("ongletContaint").style.display = "block";
     document.getElementById("ongletAjouter").style.display = "none";
+    document.getElementById("ongletModifier").style.display = "none";
 
     // document.getElementById("ongletContaint").style.display = "none";
     // document.getElementById("ongletAjouter").style.display = "block";
@@ -43,9 +45,15 @@ function ajouter() {
     document.getElementById("ongletAjouter").style.display = "block";
 }
 
+function modifier() {
+    document.getElementById("ongletContaint").style.display = "none";
+    document.getElementById("ongletModifier").style.display = "block";
+}
+
 function retour() {
     document.getElementById("ongletContaint").style.display = "block";
     document.getElementById("ongletAjouter").style.display = "none";
+    document.getElementById("ongletModifier").style.display = "none";
 }
 
 function typeWriter() {

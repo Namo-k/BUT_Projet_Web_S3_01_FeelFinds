@@ -266,7 +266,7 @@ $.ajax({
 
 });
 
-console.log("testshgdcz")
+
 markers.on('click', function (event) {
     var clickedMarker = event.layer;
     console.log(clickedMarker);
@@ -351,12 +351,17 @@ function onMarkerClick(nom_) {
                 counts[avisItem.Sentiment.toLowerCase()]++;
                 
 
-                //Bouton supression
+                //Bouton supression et modification
                 if (avisItem.nomUser === data.sessionName) {
                     var deleteButton = $('<button class="supprimer-avis">Supprimer</button>');
                     deleteButton.data('idSentiment', avisItem.IdSentiment);
                     console.log(avisItem.IdSentiment)
                     avisBlock.append(deleteButton);
+
+                    
+                    var modifyButton = $('<button class="modifier-avis">Modifier</button>');
+                    modifyButton.data('idSentiment', avisItem.IdSentiment);
+                    avisBlock.append(modifyButton);
                 }
 
                 avisBlock.append('<div class="traitBlanc"></div>');
@@ -374,6 +379,7 @@ function onMarkerClick(nom_) {
             }
 
             $('.supprimer-avis').on('click', supprimerAvis);
+            $('.modifier-avis').on('click', modifierAvis);
         },
         error: function (error) {
             console.error('Erreur lors de la requête AJAX:', error);
@@ -462,6 +468,10 @@ $('#btn_modifierSupprimer').on('click', function () {
                 deleteButton.data('idSentiment', avisItem.IdSentiment);
                 console.log(avisItem.IdSentiment)
                 avisBlock.append(deleteButton);
+
+                var modifyButton = $('<button class="modifier-avis">Modifier</button>');
+                modifyButton.data('idSentiment', avisItem.IdSentiment);
+                avisBlock.append(modifyButton);
                 
                 avisBlock.append('<div class="traitBlanc"></div>');
 
@@ -472,6 +482,7 @@ $('#btn_modifierSupprimer').on('click', function () {
             $('#nbrAvis').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
 
             $('.supprimer-avis').on('click', supprimerAvis);
+            $('.modifier-avis').on('click', modifierAvis);
             
         },
         error: function (error) {
@@ -507,6 +518,35 @@ function supprimerAvis() {
         // Si l'utilisateur clique sur "Annuler", ne rien faire
         console.log('Suppression annulée par l\'utilisateur');
     }
+}
+
+function modifierAvis(){
+    // Récupérer l'ID de l'avis à modifier
+    var idSentiment = $(this).data('idSentiment');
+
+    // Récupérer les détails de l'avis depuis le serveur
+    $.ajax({
+        type: 'GET',
+        url: 'php/getSentimentDetails.php',
+        data: { idSentiment: idSentiment },
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            $('input[name="idSentiment"]').val(data.IdSentiment);
+            $('input[name="nomMarqueur"]').val(data.nomMarqueur);
+            $('input[name="sentiment"]').val(data.Sentiment);
+            $('.nom_sentiment').text(data.Sentiment);
+            $('.input_desc').val(data.Avis);
+            
+        },
+        error: function (error) {
+            console.error('Erreur lors de la récupération des détails du sentiment:', error);
+        }
+    });
+
+    // Afficher le formulaire de modification
+    $('#ongletContaint').hide();
+    $('#ongletModifier').show();
 }
 
 
