@@ -164,6 +164,7 @@
                                 <option value="">Choisissez votre lieu...</option>
                             </select>
                         </div>
+                        <p>Lieu introuvable ? <span id="btnAjouterLieu" style="cursor:pointer;">Ajouter un lieu</span></p>
                    
                     </div>
         
@@ -205,7 +206,7 @@
                 <p class="sous_onglet_info"> Envie de modifier votre sentithèque? </p>
     
                 <form action="php/modifierSentiment.php" method="post">
-                     
+
                     <div class="adresse">
 
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
@@ -241,6 +242,62 @@
                     <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
                     <input type="text" name="idSentiment" placeholder="id sentiment" class="inputA hidden inputIdSentiment"><br><br>
 
+                </form>
+
+            </div>
+
+
+            <div id="ongletAjouterMarqueur">
+                <div class="sous_onglet_titre">
+                    <img src="images/logo_gerer.png" class="icone">
+                    <p class="icone_txt"> Ajouter un Lieu </p>
+                </div>
+                <p class="sous_onglet_info"> Envie d'ajouter votre lieu ? </p>
+    
+                <form action="php/ajoutMarqueur.php" method="post">
+                    
+                    <div class="adresseLieu">
+                        <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
+
+                        <!-- <label for="addLieu">Adresse : </label><input type="text" name="addLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputAdresseLieu"><br><br> -->
+                        <label for="nomLieu">Nom : </label><input type="text" name="nomLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputNomLieu"><br><br>
+                        <label for="addLieu">Adresse : </label><br><span><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="addLieu" rows="5" cols="33"> </textarea></span>
+
+
+                        <!-- <div>
+                            <select name="nomMarqueur" class="inputA input_adresse">
+                                <option value="">Choisissez votre lieu...</option>
+                            </select>
+                        </div>                    -->
+                    </div>
+        
+                    <div class="sentiments">
+                        <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
+                    </div>
+                    <div class="emoji">
+                        <div class="rectangle">
+                            <img src="images/emoji_epoustouflant.png" width="26px" class="emojis emoji_epoustouflant">
+                            <img src="images/emoji_triste.png" width="26px" class="emojis emoji_triste">
+                            <img src="images/emoji_amour.png" width="26px" class="emojis emoji_amour">
+                            <img src="images/emoji_joyeux.png" width="26px" class="emojis emoji_joyeux">
+                            <img src="images/emoji_emouvant.png" width="26px" class="emojis emoji_emouvant">
+                            <img src="images/emoji_festif.png" width="26px" class="emojis emoji_festif">
+                        </div>
+        
+                        <p class="nom_sentiment"> Nom du sentiment </p>
+                    </div>
+        
+                    <div class="description">
+                        <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>        
+                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                    </div>
+        
+                    <button class="btn"> Enregistrer </button>
+                    <img src="images/btn_retour.png" width="30px" class="btn_retour">
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
+                    <input type="text" name="latitude" placeholder="  Choisissez votre lieu..." class="inputA hidden inputLatitude"><br><br>
+                    <input type="text" name="longitude" placeholder="  Choisissez votre lieu..." class="inputA  hidden inputLongitude"><br><br>
+                        
                 </form>
 
             </div>

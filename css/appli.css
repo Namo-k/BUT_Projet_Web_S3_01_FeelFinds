@@ -453,3 +453,10 @@ nav li:hover .sub-menu {
 #nbrSentiment > .emojis{
     margin: 0;
 }
+
+
+.adresseLieu {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 7%;
+}

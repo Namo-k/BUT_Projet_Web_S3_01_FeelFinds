@@ -1,7 +1,7 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibG91IiwiYSI6IkJDYlg3REEifQ.9BLp9eUdT11kUy1jgujSsQ'; var map = L.mapbox.map('map')
     .setView([48.8509588, 2.3084927], 13)
     .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
-
+    
 
 // var myIcon = L.icon({
 //     iconUrl: 'images/in-love.png',
@@ -582,3 +582,60 @@ $('.input_adresse').on('change', function () {
         });
     }
 });
+
+
+var tempMarker;
+
+$('#btnAjouterLieu').on('click', function () {
+    $('#ongletContaint').hide();
+    $('#ongletAjouter').hide();
+    $('#ongletAjouterMarqueur').show();
+
+    map.on('click', function (e) {
+        console.log(e.latlng);
+
+        if (tempMarker) {
+            markers.removeLayer(tempMarker);
+        }
+
+        tempMarker = L.marker([e.latlng.lat, e.latlng.lng]);
+        markers.addLayer(tempMarker);
+
+        $('input[name="latitude"]').val(e.latlng.lat);
+        $('input[name="longitude"]').val(e.latlng.lng);
+
+        getAddressFromCoordinates(e.latlng.lat, e.latlng.lng);
+
+    });
+});
+
+function supprimerMarqueurTemporaire() {
+    if (tempMarker) {
+        markers.removeLayer(tempMarker);
+        tempMarker = null;
+    }
+}
+
+$('input[name="latitude"]').on('input', supprimerMarqueurTemporaire);
+$('input[name="longitude"]').on('input', supprimerMarqueurTemporaire);
+
+function getAddressFromCoordinates(lat, lng) {
+
+    var apiUrl = 'https://nominatim.openstreetmap.org/reverse?format=json&lat=' + lat + '&lon=' + lng;
+
+    $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+
+            console.log(data);
+            if (data && data.display_name) {
+                $('textarea[name="addLieu"]').val(data.display_name);
+            }
+        },
+        error: function (error) {
+            console.error('Erreur lors de la requête AJAX pour obtenir l\'adresse:', error);
+        }
+    });
+}
