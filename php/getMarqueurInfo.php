@@ -5,6 +5,11 @@ $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
 
 $nomMarqueur = $_GET['nom'];
 
+if (isset($_SESSION['id'])) { 
+    $sessionName = $_SESSION['id'];
+}else {
+    $sessionName = " ";
+} 
 
 $nomMarqueur = strip_tags($nomMarqueur);
 
@@ -36,7 +41,7 @@ if ($marqueurData) {
     echo json_encode([
         'nomMarqueur' => $nomMarqueur,
         'avis' => $avis,
-        'sessionName' =>$_SESSION['id'],
+        'sessionName' =>$sessionName,
     ]);
 
 } else {

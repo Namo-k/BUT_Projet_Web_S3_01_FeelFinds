@@ -29,11 +29,17 @@ try {
     // Récupérez les résultats de la requête
     $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
 
+    if (isset($_SESSION['id'])) { 
+        $sessionName = $_SESSION['id'];
+    }else {
+        $sessionName = " ";
+    } 
+
     // Renvoyer une réponse JSON avec les résultats
     header('Content-Type: application/json');
     echo json_encode([
         'avis' => $resultats, 
-        'sessionName' =>$_SESSION['id'], 
+        'sessionName' =>$sessionName, 
     ]);
 
 } catch (PDOException $e) {
