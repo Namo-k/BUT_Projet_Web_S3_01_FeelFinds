@@ -203,7 +203,7 @@ $.ajax({
     dataType: 'json',
     success: function (data) {
         console.log(data);
-        var chunkSize = 100; // Définissez la taille de la page
+        var chunkSize = 100;
         var currentPage = 0;
 
         function loadMarkers() {
@@ -276,13 +276,12 @@ markers.on('click', function (event) {
     // Centrer la carte sur le marqueur
     // map.setView(markerLatLng, 13);
 
-    // document.getElementById('input1').value = markerLatLng.lat
-    // document.getElementById('input2').value = markerLatLng.lng;
     console.log(markerLatLng.lat + ', ' + markerLatLng.lng);
 
     console.log((markerLatLng.lat-0.15) + ', ' + markerLatLng.lng);
 
-    document.getElementById('input_adresse').value = stripHtmlTags(clickedMarker.getPopup()._content);
+    $('.input_adresse').val(stripHtmlTags(clickedMarker.getPopup()._content));
+
     console.log(clickedMarker.getPopup()._content);
 
     onMarkerClick(clickedMarker.getPopup()._content);
@@ -299,7 +298,7 @@ map.on('click', function (e) {
 });
 
 $('#ferme').on("click", ()=>{$('#ongletAvis').hide();})
-$('#input_adresse').on("click", ()=>{$('#ongletAvis').hide();})
+$('.input_adresse').on("click", ()=>{$('#ongletAvis').hide();})
 
 function onMarkerClick(nom_) {
     // Utilisez AJAX pour obtenir les informations du marqueur depuis le fichier PHP
@@ -312,25 +311,21 @@ function onMarkerClick(nom_) {
         data: { nom: nom_ },
         dataType: 'json',
         success: function (data) {
-            // Vérifiez si la réponse contient des erreurs
-
+            
             console.log(data);
             if (data.error) {
                 console.error('Erreur lors de la récupération des informations du marqueur:', data.error);
                 return;
             }
 
-            // Récupérez les informations du marqueur et des avis
             var nomMarqueur = data.nomMarqueur;
             var avis = data.avis;
 
-            // console.log(data.sessionName);
-
-            // Affichez les informations dans votre div #avis
             $('#nomMarqueur').text(nomMarqueur);
 
-            // Ajoutez les avis à la div #avis
-            $('#avis').empty(); // Pour vous assurer que la div est vide avant d'ajouter les avis
+
+            $('#avis').empty();
+            $('#nbrAvis').empty();
             $('#nbrSentiment').empty();
             
             var counts = {
@@ -343,10 +338,7 @@ function onMarkerClick(nom_) {
             };
 
             avis.forEach(function (avisItem) {
-                // Créez un bloc pour chaque avis
-
-
-
+    
                 console.log("avisItem");
                 console.log(avisItem);
                 var avisBlock = $('<div>');
@@ -359,7 +351,7 @@ function onMarkerClick(nom_) {
                 counts[avisItem.Sentiment.toLowerCase()]++;
                 
 
-                // Ajoutez un bouton de suppression
+                //Bouton supression
                 if (avisItem.nomUser === data.sessionName) {
                     var deleteButton = $('<button class="supprimer-avis">Supprimer</button>');
                     deleteButton.data('idSentiment', avisItem.IdSentiment);
@@ -369,12 +361,11 @@ function onMarkerClick(nom_) {
 
                 avisBlock.append('<div class="traitBlanc"></div>');
 
-                // Ajoutez le bloc d'avis à la div #avis
                 $('#avis').append(avisBlock);
                 console.log(avisBlock);
             });
 
-            // À la fin de la boucle forEach, affichez l'image suivie du nombre de sentiments par type
+
             for (var sentimentType in counts) {
                 if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
                     $('#nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
@@ -383,13 +374,9 @@ function onMarkerClick(nom_) {
             }
 
 
-
-
-            // Gestion du clic sur le bouton de suppression
             $('.supprimer-avis').on('click', function () {
                 var idSentiment = $(this).data('idSentiment');
 
-                // Envoyer une requête AJAX pour supprimer l'avis
                 $.ajax({
                     type: 'POST',
                     url: 'php/supprimerAvis.php',
@@ -418,15 +405,13 @@ function stripHtmlTags(htmlString) {
     return htmlString.replace(/<\/?[^>]+(>|$)/g, "");
 }
 
-// Charger les noms de marqueurs depuis la base de données avec une requête AJAX
 $.ajax({
     type: 'GET',
-    url: 'php/chargementMarqueurs.php',  // Assurez-vous de créer ce fichier PHP
+    url: 'php/chargementMarqueurs.php', 
     dataType: 'json',
     success: function (data) {
-        // Ajouter chaque nom de marqueur comme une option dans la liste déroulante
         data.forEach(function (nomMarqueur) {
-            $('#input_adresse').append('<option value="' + nomMarqueur + '">' + nomMarqueur + '</option>');
+            $('.input_adresse').append('<option value="' + nomMarqueur + '">' + nomMarqueur + '</option>');
         });
     },
     error: function (error) {
@@ -449,47 +434,39 @@ function getImagePath(sentiment) {
         case 'festif':
             return 'images/emoji_festif.png';
         default:
-            return ''; // Chemin d'image par défaut si le sentiment n'est pas reconnu
+            return ''; 
     }
 }
 
 
-// Gestion du clic sur le bouton "Modifier ou Supprimer"
 $('#btn_modifierSupprimer').on('click', function () {
 
     var nbrAvis = 0;
 
-    // Envoyer une requête AJAX pour récupérer les avis de l'utilisateur
     $.ajax({
         type: 'GET',
-        url: 'php/getAvisUtilisateur.php', // Remplacez par le chemin correct vers votre script PHP
+        url: 'php/getAvisUtilisateur.php',
         dataType: 'json',
         success: function (data) {
-            // Vérifiez si la réponse contient des erreurs
+
             if (data.error) {
                 console.error('Erreur lors de la récupération des avis de l\'utilisateur:', data.error);
                 return;
             }
             console.log(data);
-            // Afficher les avis dans l'ongletAvis
-            // $('#ongletAvis').empty()
-            $('#ongletAvis').show(); // Assurez-vous que l'ongletAvis est visible
 
+            $('#ongletAvis').show(); 
 
-            // Récupérez les informations du marqueur et des avis
             var nomMarqueur = data.nomMarqueur;
             var avis = data.avis;
 
-            // Affichez les informations dans votre div #avis
             $('#nomMarqueur').text(nomMarqueur);
 
-            // Ajoutez le nom de l'utilisateur (si vous avez cette information)
             $('#nomMarqueur').text('Avis de ' + data.sessionName);
             
-            $('#onglatAvisContent').empty();
+            $('#nbrSentiment').empty();
 
-            // Ajoutez les avis à la div #avis
-            $('#avis').empty(); // Pour vous assurer que la div est vide avant d'ajouter les avis
+            $('#avis').empty();
 
             avis.forEach(function (avisItem) {
                 var avisBlock = $('<div>');
@@ -504,18 +481,15 @@ $('#btn_modifierSupprimer').on('click', function () {
                 
                 avisBlock.append('<div class="traitBlanc"></div>');
 
-                // Ajoutez le bloc d'avis à la div #avis
                 $('#avis').append(avisBlock);
                 ++nbrAvis;
             });
             
-            // $('#nbr').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
+            $('#nbrAvis').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
 
-            // Gestion du clic sur le bouton de suppression
             $('.supprimer-avis').on('click', function () {
                 var idSentiment = $(this).data('idSentiment');
 
-                // Envoyer une requête AJAX pour supprimer l'avis
                 $.ajax({
                     type: 'POST',
                     url: 'php/supprimerAvis.php',

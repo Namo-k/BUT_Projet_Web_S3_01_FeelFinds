@@ -238,7 +238,7 @@ nav li:hover .sub-menu {
     font-style: italic;
 }
 
-#rectangle {
+.rectangle {
     margin-top: 4%;
     margin-left: 12%;
     width: 75%;
@@ -253,15 +253,7 @@ nav li:hover .sub-menu {
     cursor: pointer;
 }
 
-#nom_sentiment {
-    font-size: 18px;
-    font-family: 'Patua one', sans-serif;
-    width: 50%;
-    margin: 17px auto;
-    letter-spacing: 1px;
-}
-
-#nom_sentiment2 {
+.nom_sentiment {
     font-size: 18px;
     font-family: 'Patua one', sans-serif;
     width: 50%;
@@ -318,12 +310,12 @@ nav li:hover .sub-menu {
     margin-top: 1%;
 }
 
-#input_adresse::placeholder {
+.input_adresse::placeholder {
     color: #13528d;
     font-style: italic;
 }
 
-#adresse {
+.adresse {
     width: 80%;
     margin: 0 auto;
     margin-top: 7%;
@@ -334,12 +326,12 @@ nav li:hover .sub-menu {
     text-align: left;
 }
 
-#sentiments {
+.sentiments {
     width: 80%;
     margin: 0 auto;
 }
 
-#description {
+.description {
     width: 80%;
     margin: 0 auto;
     margin-top: 7%;
@@ -356,7 +348,7 @@ nav li:hover .sub-menu {
     margin-top: 1%;
 }
 
-#input_desc::placeholder {
+.input_desc::placeholder {
     color: #13528d;
     font-style: italic;
 }

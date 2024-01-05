@@ -156,23 +156,18 @@
     
                 <form action="php/ajoutSentiment.php" method="post">
 
-                    <div id="adresse">
-                        <!-- Lat  : <input type="text" placeholder=" Choisissez votre lieu..." class="inputA" id="input1"><br><br>
-                        Lon  : <input type="text" placeholder="  Choisissez votre lieu..." class="inputA" id="input2"><br><br>
-                
-                        <p>__________</p> -->
-    
+                    <div class="adresse">
+
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
-                        <!-- <div><input type="text" name="nomMarqueur" placeholder="  Choisissez votre lieu..." class="inputA" id="input_adresse"></div> </br> -->
                         <div>
-                            <select name="nomMarqueur" class="inputA" id="input_adresse">
+                            <select name="nomMarqueur" class="inputA input_adresse">
                                 <option value="">Choisissez votre lieu...</option>
                             </select>
                         </div>
                    
                     </div>
         
-                    <div id="sentiments">
+                    <div class="sentiments">
                         <p class="txtInfo"> &nbsp • &nbsp Choix du sentiment : </p>
                     </div>
                     <div class="emoji">
@@ -188,16 +183,14 @@
                         <p class="nom_sentiment"> Nom du sentiment </p>
                     </div>
         
-                    <div id="description">
-                        <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
-                        <!--<div><input type="text" placeholder="  Décrivez votre moment..." class="inputD" id="input_desc"></div> </br> -->
-        
-                        <div><textarea id="input_desc" class="inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                    <div class="description">
+                        <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>        
+                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
                     </div>
         
                     <button class="btn"> Enregistrer </button>
                     <img src="images/btn_retour.png" width="30px" id="btn_retour">
-                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden" id="inputSentiment"><br><br>
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
 
                 </form>
 

@@ -17,32 +17,16 @@ window.onload = function () {
 
     for (let i = 0; i < sentiments.length; i++) {
         const emojiId = "emoji_" + sentiments[i].nom.toLowerCase();
-        document.getElementById(emojiId).addEventListener("click", function () {
-            modifier(sentiments[i].nom, sentiments[i].desc);
+        console.log(emojiId);
+        $("." + emojiId).click(function() {
+            $("#description_sentiment").html(sentiments[i].desc);
+            $(".nom_sentiment").html(sentiments[i].nom);
+            $('.inputSentiment').val(sentiments[i].nom);
         });
     }
-
-    for (let j = 0; j < sentiments.length; j++) {
-        const emojiId2 = "emoji_2" + sentiments[j].nom.toLowerCase();
-        document.getElementById(emojiId2).addEventListener("click", function () {
-            console.log(sentiments[j].nom);
-            modifier2(sentiments[j].nom);
-        });
-    }
-
 
     document.getElementById("btn_ajouter").addEventListener("click", ajouter);
     document.getElementById("btn_retour").addEventListener("click", retour);
-}
-
-function modifier(nom, desc) {
-    document.getElementById("nom_sentiment").innerHTML = nom;
-    document.getElementById("description_sentiment").innerHTML = desc;
-}
-
-function modifier2(nom) {
-    document.getElementById("nom_sentiment2").innerHTML = nom;
-    document.getElementById("inputSentiment").value = nom;
 }
 
 

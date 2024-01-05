@@ -1,8 +1,8 @@
 <?php
 
 try {
-//FAUT PAS LANCER CE FICHIER 
-    $db = new PDO('mysql:host=localhost;dbname=_test', 'root', '');
+
+    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds_test', 'root', '');
  
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
