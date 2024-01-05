@@ -512,3 +512,35 @@ $('#btn_modifierSupprimer').on('click', function () {
     });
 });
 
+
+//Pour centrer la carte sur le marqueur avec le nom selectionné
+$('.input_adresse').on('change', function () {
+    var selectedMarqueur = $(this).val();
+
+    if (selectedMarqueur !== '') {
+        // Effectuez une requête AJAX pour obtenir les coordonnées du marqueur
+        $.ajax({
+            type: 'POST', // Utilisez POST ou GET selon vos besoins
+            url: 'php/getMarqueurCoordinates.php', // Le fichier PHP pour traiter la requête
+            data: { nomMarqueur: selectedMarqueur },
+            dataType: 'json',
+            success: function (data) {
+                // Vérifiez si la réponse contient des erreurs
+                if (data.error) {
+                    console.error('Erreur lors de la récupération des coordonnées:', data.error);
+                    return;
+                }
+
+                // Les coordonnées du marqueur
+                var latitude = data.latitude;
+                var longitude = data.longitude;
+
+                // Utilisez Leaflet pour centrer la carte sur les coordonnées
+                map.setView([latitude, longitude], 15); // 15 est le niveau de zoom, ajustez-le selon vos besoins
+            },
+            error: function (error) {
+                console.error('Erreur lors de la requête AJAX:', error);
+            }
+        });
+    }
+});
