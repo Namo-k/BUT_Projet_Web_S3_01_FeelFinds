@@ -16,10 +16,9 @@ if (isset($_POST['submit'])) {
         $user_pseudo = $data[0]["pseudo"];
 
         if (password_verify($mdp, $data[0]["password"])) {
-            $_SESSION['id'] = $pseudo;
-            header("Location:../appli.php?nom=" . $_SESSION['id'] . "");
-        } else {
-            echo "Mot de passe erronnée. ";
+            $_SESSION['id'] = $user_pseudo;
+            $_SESSION['mail'] = $id;
+            header("Location:../appli.php");
         }
     } else { //non trouvé avec l'adresse mail, on test avec le pseudo
         $sql = "SELECT * FROM user where pseudo ='$id'";
@@ -30,13 +29,10 @@ if (isset($_POST['submit'])) {
             $data = $result->fetchAll();
             if (password_verify($mdp, $data[0]["password"])) {
                 $_SESSION['id'] = $id;
+                $_SESSION['mail'] = $data[0]["mail"];
                 header("Location:../appli.php");
-            } else {
-                echo "Mot de passe erronnée. ";
-            }
-        } else {
-            echo "Nom d'utilisateur ou mail incorrecte.";
-        }
+            } 
+        } 
     }
 } else {
 
@@ -46,6 +42,7 @@ if (isset($_POST['submit'])) {
     $pseudo = $_POST['pseudoInscr'];
     $pass = $_POST['mdpInscr'];
     $_SESSION['id'] = $pseudo;
+    $_SESSION['mail'] = $mail;
     $pass = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO user (mail,pseudo,password) VALUES ('$mail','$pseudo','$pass')";
     $req = $db->prepare($sql);

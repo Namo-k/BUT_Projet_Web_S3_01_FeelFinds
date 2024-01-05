@@ -51,7 +51,7 @@
                         <div id="photoAvatar"><img src="images/connexion.png" width="60px"></div>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="#">Profil</a></li>
+                        <li><a href="php/profil.php">Profil</a></li>
                         <li><a href="php/deconnexion.php">Déconnexion</a></li>
                     </ul>
                 </li>

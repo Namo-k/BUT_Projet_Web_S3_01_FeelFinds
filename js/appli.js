@@ -59,7 +59,6 @@ function retour() {
     document.getElementById("ongletModifier").style.display = "none";
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
 }
-
 function typeWriter() {
     if (i < txt.length) {
         document.getElementById("typewriter").innerHTML += txt.charAt(i);

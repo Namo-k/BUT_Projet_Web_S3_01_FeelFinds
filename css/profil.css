@@ -1,0 +1,139 @@
+body {
+    background-color: #eeeeee;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    padding: 2em;
+    display: flex;
+}
+
+#container{
+    margin-left: 4%;
+    margin-top: 1%;
+    display: flex;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+#container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#profil {
+    width: 500px;
+    margin: 2em;
+    padding: 15px ;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+    margin-bottom: 6%;
+    height: 550px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#personnaliser{
+    width: 800px;
+    margin: 2em;
+    padding: 15px ;
+    background-color: #acacac;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+    margin-bottom: 6%;
+    height: 550px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#logo{
+    margin-left: 25%;
+}
+#titre{
+    margin-left: 40%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#retour{
+    width: 300px;
+    float: right;
+    margin-left: 18%;
+    text-align: center;
+}
+#retour a{
+    color: white;
+}
+#retour a:visited{
+    color: white;
+}
+
+
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#pprofil{
+    width: 200px;
+    height: 200px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: auto;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #cc0000;
+  }

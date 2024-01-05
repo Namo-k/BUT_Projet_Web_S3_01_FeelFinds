@@ -39,3 +39,4 @@ try {
     $db = null;
     // header('Location: ../appli.php');
 }
+?>
