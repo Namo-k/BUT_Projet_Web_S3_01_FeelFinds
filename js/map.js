@@ -563,8 +563,8 @@ function ongletAvisChargement(){
 
             for (var sentimentType in counts) {
                 if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
-                    $('#ongletFavori .nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
-                    $('#ongletFavori .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                    $('#ongletAvis .nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
+                    $('#ongletAvis .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
                 }
             }
 
