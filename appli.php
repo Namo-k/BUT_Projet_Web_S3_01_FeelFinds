@@ -130,7 +130,7 @@
                         <div class="choix">
                             <p class="bouton" id="btn_ajouter"> Ajouter un sentiment</p>
                             <p class="bouton" id="btn_modifierSupprimer"> Modifier ou Supprimer </p>
-                            <p class="bouton"> Consulter Favori </p>
+                            <p class="bouton" id="btn_favori"> Consulter Favori </p>
                         </div>
                     </div>
 
@@ -253,14 +253,8 @@
 
                         <!-- <label for="addLieu">Adresse : </label><input type="text" name="addLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputAdresseLieu"><br><br> -->
                         <label for="nomLieu">Nom : </label><input type="text" name="nomLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputNomLieu"><br><br>
-                        <label for="addLieu">Adresse : </label><br><span><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="addLieu" rows="5" cols="33"> </textarea></span>
+                        <label for="addLieu">Adresse : </label><br><span><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="addLieu" rows="5" cols="33" readonly> </textarea></span>
 
-
-                        <!-- <div>
-                            <select name="nomMarqueur" class="inputA input_adresse">
-                                <option value="">Choisissez votre lieu...</option>
-                            </select>
-                        </div>                    -->
                     </div>
 
                     <div class="sentiments">
@@ -296,20 +290,33 @@
 
         </div>
 
-        <div id="ongletAvis">
-            <p id="ferme">
-                < Retour</p>
-                    <h3>Info marqueur </h3>
-                    <p id="nomMarqueur">Nom marqueur</p>
-                    <div id="nbrAvis"></div>
-                    <div id="nbrSentiment"></div>
+        <div id="ongletAvis" class="ongletDroite">
+            <p class="fermeAvis">< Retour</p>
+            <h3>Info marqueur </h3>
+            <p class="nomMarqueur">Nom marqueur</p>
+            <div class="nbrAvis"></div>
+            <div class="nbrSentiment"></div>
 
-                    <div id="traitBlanc1"></div>
-                    <div id="avis">
-                        <p id="sentiment">Sentiment</p>
-                        <p id="avis">Avis</p>
-                        <p id="personne">Personne</p>
-                    </div>
+            <div class="traitBlanc1"></div>
+            <div class="avis">
+                <p class="sentiment">Sentiment</p>
+                <p class="avis">Avis</p>
+                <p class="personne">Personne</p>
+            </div>
+        </div>
+        <div id="ongletFavori" class="ongletDroite">
+            <p class="fermeFavori">< Retour</p>
+            <h3>Favori marqueur </h3>
+            <p class="nomPersonne">Nom Personne</p>
+            <div class="nbrAvis"></div>
+            <div class="nbrSentiment"></div>
+            
+            <div class="traitBlanc1"></div>
+            <div class="avis">
+                <p class="sentiment">Sentiment</p>
+                <p class="avis">Avis</p>
+                <!-- <p class="personne">Personne</p> -->
+            </div>
         </div>
 
     </div>

@@ -410,7 +410,7 @@ nav li:hover .sub-menu {
 }
 
 
-#ongletAvis {
+.ongletDroite {
     position: relative;
     z-index: 2;
     width: 350px;
@@ -432,7 +432,7 @@ nav li:hover .sub-menu {
     margin: auto;
 }
 
-#traitBlanc1 {
+.traitBlanc1 {
     height: 3px;
     width: 150px;
     background-color: white;
@@ -440,17 +440,17 @@ nav li:hover .sub-menu {
     margin: auto;
 }
 
-#ferme{
+.ferme{
     cursor: pointer;
 }
 
-#nbrSentiment{
+.nbrSentiment{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#nbrSentiment > .emojis{
+.nbrSentiment > .emojis{
     margin: 0;
 }
 

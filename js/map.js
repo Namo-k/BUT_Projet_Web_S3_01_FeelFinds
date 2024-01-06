@@ -1,3 +1,16 @@
+$(document).ready(function () {
+    var afficherOngletAvis = localStorage.getItem('afficherOngletAvis');
+    var afficherOngletFavori = localStorage.getItem('afficherOngletFavori');
+    if (afficherOngletAvis === 'true') {
+        ongletAvisChargement();
+        localStorage.removeItem('afficherOngletAvis');
+    }
+    if (afficherOngletFavori === 'true') {
+        ongletFavoriChargement();
+        localStorage.removeItem('afficherOngletFavori');
+    }
+});
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleGFuZHJlLWNhcm91IiwiYSI6ImNscHRpdDFkcTBkaXkyaXJsYWd0b3BzcTYifQ.T0KEMuCacRyljE3bfI89yw';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -134,6 +147,7 @@ map.on('load', () => {
 
     map.on('click', () => {
         $('#ongletAvis').hide();
+        $('#ongletFavori').hide();
     });
 
     // When a click event occurs on a feature in
@@ -196,12 +210,12 @@ map.on('load', () => {
                 var nomMarqueur = data.nomMarqueur;
                 var avis = data.avis;
 
-                $('#nomMarqueur').text(nomMarqueur);
+                $('.nomMarqueur').text(nomMarqueur);
 
 
-                $('#avis').empty();
-                $('#nbrAvis').empty();
-                $('#nbrSentiment').empty();
+                $('.avis').empty();
+                $('.nbrAvis').empty();
+                $('.nbrSentiment').empty();
 
                 var counts = {
                     'epoustouflant': 0,
@@ -241,15 +255,15 @@ map.on('load', () => {
 
                     avisBlock.append('<div class="traitBlanc"></div>');
 
-                    $('#avis').append(avisBlock);
+                    $('.avis').append(avisBlock);
                     console.log(avisBlock);
                 });
 
 
                 for (var sentimentType in counts) {
                     if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
-                        $('#nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
-                        $('#nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                        $('.nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
+                        $('.nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
                     }
                 }
 
@@ -298,7 +312,7 @@ map.on('load', () => {
 
                 if (earthquakesSource) {
                     // Obtenez les fonctionnalités existantes
-                    const existingFeatures = earthquakesSource._data.features || [];
+                    // const existingFeatures = earthquakesSource._data.features || [];
 
                     // Ajoutez les nouveaux marqueurs à la source de données GeoJSON existante
                     const newFeatures = data.marqueurs.map(function (marqueur) {
@@ -316,12 +330,12 @@ map.on('load', () => {
                     });
 
                     // Créez un tableau combinant les fonctionnalités existantes et les nouvelles fonctionnalités
-                    const updatedFeatures = existingFeatures.concat(newFeatures);
+                    // const updatedFeatures = existingFeatures.concat(newFeatures);
 
                     // Mettez à jour la source de données avec le nouveau GeoJSON complet
                     earthquakesSource.setData({
                         type: 'FeatureCollection',
-                        features: updatedFeatures
+                        features: newFeatures
                     });
                 } else {
                     console.error('La source de données GeoJSON avec le nom "earthquakes" n\'existe pas.');
@@ -475,9 +489,7 @@ function getImagePath(sentiment) {
     }
 }
 
-
-
-$('#btn_modifierSupprimer').on('click', function () {
+function ongletAvisChargement(){
 
     var nbrAvis = 0;
 
@@ -493,21 +505,34 @@ $('#btn_modifierSupprimer').on('click', function () {
             }
             console.log(data);
 
+            var counts = {
+                'epoustouflant': 0,
+                'triste': 0,
+                'amour': 0,
+                'joyeux': 0,
+                'emouvant': 0,
+                'festif': 0
+            };
+
             $('#ongletAvis').show();
 
             var nomMarqueur = data.nomMarqueur;
             var avis = data.avis;
 
-            $('#nomMarqueur').text(nomMarqueur);
+            $('#ongletAvis .nomMarqueur').text(nomMarqueur);
 
-            $('#nomMarqueur').text('Avis de ' + data.sessionName);
+            $('#ongletAvis .nomMarqueur').text('Avis de ' + data.sessionName);
 
-            $('#nbrSentiment').empty();
-            $('#nbrAvis').empty();
+            $('#ongletAvis .nbrSentiment').empty();
+            $('#ongletAvis .nbrAvis').empty();
 
-            $('#avis').empty();
+            $('#ongletAvis .avis').empty();
 
             avis.forEach(function (avisItem) {
+
+                counts[avisItem.Sentiment.toLowerCase()]++;
+
+
                 var avisBlock = $('<div>');
                 avisBlock.append('<p>Lieu : ' + avisItem.nomMarqueur + '</p>');
                 avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
@@ -522,25 +547,131 @@ $('#btn_modifierSupprimer').on('click', function () {
                 modifyButton.data('idSentiment', avisItem.IdSentiment);
                 avisBlock.append(modifyButton);
 
+                var recentrerBtn = $('<button class="recentrer-avis">Recentrer</button>');
+                recentrerBtn.data('idSentiment', avisItem.IdSentiment);
+                avisBlock.append(recentrerBtn);
+
+                var favoriBtn = $('<button class="favori-avis">Favori</button>');
+                favoriBtn.data('idSentiment', avisItem.IdSentiment);
+                avisBlock.append(favoriBtn);
+
                 avisBlock.append('<div class="traitBlanc"></div>');
 
-                $('#avis').append(avisBlock);
+                $('#ongletAvis .avis').append(avisBlock);
                 ++nbrAvis;
             });
 
-            $('#nbrAvis').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
+            for (var sentimentType in counts) {
+                if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
+                    $('#ongletFavori .nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
+                    $('#ongletFavori .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                }
+            }
+
+            $('#ongletAvis .nbrAvis').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
 
             $('.supprimer-avis').on('click', supprimerAvis);
             $('.modifier-avis').on('click', modifierAvis);
+            $('.recentrer-avis').on('click', recentrerAvis);
+            $('.favori-avis').on('click', favoriAvis);
 
         },
         error: function (error) {
             console.error('Erreur lors de la requête AJAX pour récupérer les avis de l\'utilisateur:', error);
         }
     });
-});
+}
+
+$('#btn_modifierSupprimer').on('click', ongletAvisChargement);
 
 
+function ongletFavoriChargement(){
+    var nbrAvis = 0;
+
+    $.ajax({
+        type: 'GET',
+        url: 'php/getAvisUtilisateurFavori.php',
+        dataType: 'json',
+        success: function (data) {
+
+            if (data.error) {
+                console.error('Erreur lors de la récupération des avis de l\'utilisateur:', data.error);
+                return;
+            }
+            console.log(data);
+
+            var counts = {
+                'epoustouflant': 0,
+                'triste': 0,
+                'amour': 0,
+                'joyeux': 0,
+                'emouvant': 0,
+                'festif': 0
+            };
+
+            $('#ongletFavori').show();
+
+            var avis = data.avis;
+
+            console.log(avis);
+
+
+            $('#ongletFavori .nomPersonne').text('Avis de ' + data.sessionName);
+
+            $('#ongletFavori .nbrSentiment').empty();
+            $('#ongletFavori .nbrAvis').empty();
+
+            $('#ongletFavori .avis').empty();
+
+            avis.forEach(function (avisItem) {
+            
+                counts[avisItem.Sentiment.toLowerCase()]++;
+  
+                var avisBlock = $('<div>');
+                avisBlock.append('<p>Lieu : ' + avisItem.nomMarqueur + '</p>');
+                avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
+                avisBlock.append('<p>Avis : ' + avisItem.Avis + '</p>');
+
+                
+                var recentrerBtn = $('<button class="recentrer-avis">Recentrer</button>');
+                recentrerBtn.data('idSentiment', avisItem.IdSentiment);
+                avisBlock.append(recentrerBtn);
+
+                var deleteButton = $('<button class="supprimer-favori">Supprimer Favori</button>');
+                deleteButton.data('idSentiment', avisItem.IdSentiment);
+                console.log(avisItem.IdSentiment)
+                avisBlock.append(deleteButton);
+
+               
+                avisBlock.append('<div class="traitBlanc"></div>');
+
+                $('#ongletFavori .avis').append(avisBlock);
+                ++nbrAvis;
+            });
+
+            for (var sentimentType in counts) {
+                if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
+                    $('#ongletFavori .nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
+                    $('#ongletFavori .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                }
+            }
+
+            $('#ongletFavori .nbrAvis').append('<p> Nombre de Favori : ' + nbrAvis + '</p>');
+
+
+            $('.supprimer-favori').on('click', supprimerFavori);
+            $('.recentrer-avis').on('click', recentrerAvis);
+
+
+        },
+        error: function (error) {
+            console.error('Erreur lors de la requête AJAX pour récupérer les avis de l\'utilisateur:', error);
+        }
+    });
+}
+
+
+$('#btn_favori').on('click', ongletFavoriChargement);
 
 
 
@@ -601,7 +732,110 @@ function modifierAvis() {
     $('#ongletModifier').show();
 }
 
-$('#ferme').on("click", () => { $('#ongletAvis').hide(); })
+function recentrerAvis() {
+    // Récupérer l'ID de l'avis à supprimer
+    var idSentiment = $(this).data('idSentiment');
+
+    
+    // Si l'utilisateur clique sur "OK", effectuer la suppression
+    $.ajax({
+        type: 'GET',
+        url: 'php/getMarqueurCoordSentiment.php',
+        dataType: 'json',
+        data: { idSentiment: idSentiment },
+        success: function (data) {
+            
+            console.log('Marqueur trouvé');
+            console.log(data);
+            console.log(idSentiment);
+            map.flyTo({
+                center: [data.longitude, data.latitude], // Utilisez le premier point du trajet
+                zoom: 15, // Ajustez le niveau de zoom selon vos préférences
+                essential: true // Empêche le mouvement brusque de la carte pendant l'animation
+            });
+        },
+        error: function (error) {
+            console.error('Erreur recentrer de l\'avis:', error);
+        }
+    });
+}
+
+function favoriAvis() {
+    // Récupérer l'ID de l'avis à supprimer
+    var idSentiment = $(this).data('idSentiment');
+
+    // Demander une confirmation avant la suppression
+    var confirmation = confirm('Voulez-vous vraiment ajouter en favori cet avis?');
+
+    if (confirmation) {
+        // Si l'utilisateur clique sur "OK", effectuer la suppression
+        $.ajax({
+            type: 'POST',
+            url: 'php/ajoutFavoriAvis.php',
+            data: { idSentiment: idSentiment },
+            success: function (response) {
+                console.log('Avis ajouté en favori avec succès');
+                console.log(response);
+
+                if ($('#ongletFavori').is(':visible')) {
+                    localStorage.setItem('afficherOngletFavori', 'true');
+                } 
+                localStorage.setItem('afficherOngletAvis', 'true');
+
+
+                window.location.reload()
+                // $('#ongletAvis').show();
+                // if(a == 1){
+                //     $('#ongletFavori').show();
+                // }
+
+            },
+            error: function (error) {
+                console.error('Erreur lors de l\'ajout en favori de l\'avis:', error);
+            }
+        });
+    } else {
+        // Si l'utilisateur clique sur "Annuler", ne rien faire
+        console.log('Ajout favori annulée par l\'utilisateur');
+    }
+}
+
+function supprimerFavori() {
+    // Récupérer l'ID de l'avis à supprimer
+    var idSentiment = $(this).data('idSentiment');
+
+    // Demander une confirmation avant la suppression
+    var confirmation = confirm('Voulez-vous vraiment supprimer ce favori?');
+
+    if (confirmation) {
+        // Si l'utilisateur clique sur "OK", effectuer la suppression
+        $.ajax({
+            type: 'POST',
+            url: 'php/supprimerFavoriAvis.php',
+            data: { idSentiment: idSentiment },
+            success: function (response) {
+                console.log('Favori supprimé avec succès');
+                console.log(response);
+
+                localStorage.setItem('afficherOngletFavori', 'true');
+                if ($('#ongletAvis').is(':visible')) {
+                    localStorage.setItem('afficherOngletAvis', 'true');
+                } 
+                
+                window.location.reload();
+            },
+            error: function (error) {
+                console.error('Erreur lors de la suppression du favori : ', error);
+            }
+        });
+    } else {
+        // Si l'utilisateur clique sur "Annuler", ne rien faire
+        console.log('Suppression annulée par l\'utilisateur');
+    }
+}
+
+$('.fermeAvis').on("click", () => { $('#ongletAvis').hide();})
+$('.fermeFavori').on("click", () => { $('#ongletFavori').hide(); })
 $('.input_adresse').on("click", () => { $('#ongletAvis').hide(); })
 
 
@@ -644,9 +878,10 @@ $('.input_adresse').on('change', function () {
 
 
 
-var tempMarker;
 
+var tempMarker; 
 $('#btnAjouterLieu').on('click', function () {
+    
 
     $('#ongletContaint').hide();
     $('#ongletAjouter').hide();
@@ -673,22 +908,24 @@ $('#btnAjouterLieu').on('click', function () {
         getAddressFromCoordinates(coordinates[1], coordinates[0]);
     });
 
-    $('#btnAddLieu').on('click', function () {
-        marker = L.marker([$('input[name="latitude"]').val(), $('input[name="longitude"]').val()]);
-        markers.addLayer(marker);
-    });
+    // $('#btnAddLieu').on('click', function () {
+    //     marker = L.marker([$('input[name="latitude"]').val(), $('input[name="longitude"]').val()]);
+    //     markers.addLayer(marker);
+    // });
 
 });
 
 function supprimerMarqueurTemporaire() {
     if (tempMarker) {
-        markers.removeLayer(tempMarker);
+        tempMarker.remove();
         tempMarker = null;
     }
 }
 
+
 $('input[name="latitude"]').on('input', supprimerMarqueurTemporaire);
 $('input[name="longitude"]').on('input', supprimerMarqueurTemporaire);
+$('.btn_retour').on('click', supprimerMarqueurTemporaire);
 
 
 function getAddressFromCoordinates(lat, lng) {

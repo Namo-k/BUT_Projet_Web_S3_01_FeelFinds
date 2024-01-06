@@ -26,6 +26,7 @@ window.onload = function () {
 
     document.getElementById("btn_ajouter").addEventListener("click", ajouter);
     // $("#btn_modifierSupprimer").click(modifier);
+    $("#btn_favori").click(ouvertureFavori);
     $(".btn_retour").click(retour);
 }
 
@@ -36,7 +37,7 @@ function init() {
     document.getElementById("ongletModifier").style.display = "none";
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
     document.getElementById("btnAnnulerFiltre").style.display = "none";
-    
+    document.getElementById("ongletFavori").style.display = "none";
 
     // document.getElementById("ongletContaint").style.display = "none";
     // document.getElementById("ongletAjouter").style.display = "block";
@@ -48,9 +49,9 @@ function ajouter() {
     document.getElementById("ongletAjouter").style.display = "block";
 }
 
-function modifier() {
-    document.getElementById("ongletContaint").style.display = "none";
-    document.getElementById("ongletModifier").style.display = "block";
+function ouvertureFavori() {
+    // document.getElementById("ongletContaint").style.display = "none";
+    document.getElementById("ongletFavori").style.display = "block";
 }
 
 function retour() {
@@ -58,6 +59,7 @@ function retour() {
     document.getElementById("ongletAjouter").style.display = "none";
     document.getElementById("ongletModifier").style.display = "none";
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
+    document.getElementById("ongletFavori").style.display = "none";
 }
 function typeWriter() {
     if (i < txt.length) {
