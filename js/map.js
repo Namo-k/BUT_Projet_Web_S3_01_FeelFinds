@@ -17,7 +17,7 @@ const directions = new MapboxDirections({
         inputs: true, // Désactivez les champs de saisie dans le panneau de recherche
         instructions: true // Activez les instructions dans le panneau
     },
-    interactive: true,
+    interactive: false,
     placeholderOrigin: 'Entrez votre lieu de départ', // Placeholder personnalisé pour l'origine
     placeholderDestination: 'Entrez votre lieu de destination',// Désactive la capture automatique des clics pour ce contrôle
     profile: 'mapbox/driving',
