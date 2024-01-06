@@ -17,7 +17,6 @@ window.onload = function () {
 
     for (let i = 0; i < sentiments.length; i++) {
         const emojiId = "emoji_" + sentiments[i].nom.toLowerCase();
-        console.log(emojiId);
         $("." + emojiId).click(function() {
             $("#description_sentiment").html(sentiments[i].desc);
             $(".nom_sentiment").html(sentiments[i].nom);
@@ -36,6 +35,7 @@ function init() {
     document.getElementById("ongletAjouter").style.display = "none";
     document.getElementById("ongletModifier").style.display = "none";
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
+    document.getElementById("btnAnnulerFiltre").style.display = "none";
     
 
     // document.getElementById("ongletContaint").style.display = "none";

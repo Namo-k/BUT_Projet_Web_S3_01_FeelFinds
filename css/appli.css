@@ -460,3 +460,63 @@ nav li:hover .sub-menu {
     margin: 0 auto;
     margin-top: 7%;
 }
+
+
+
+/* #directions-container {
+    position:fixed;
+    z-index: 4;
+    margin-top: 3%;
+    margin-left: 13%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Ajustez la largeur selon vos besoins 
+  }
+
+Personnalisez le style des champs de saisie Mapbox Directions 
+.mapbox-directions-origin input[type='text'],
+.mapbox-directions-destination input[type='text'] {
+  background-color: #f0f0f0; /* Couleur de fond 
+  border: 1px solid #ccc; /* Bordure 
+  padding: 8px; /* Espacement intérieur 
+  font-size: 14px; /* Taille de police 
+  color: #333; /* Couleur du texte 
+  width: 100%; /* Largeur 
+}
+
+/* Style pour les suggestions dans les champs de saisie 
+.mapbox-directions-suggestions-container {
+    color: #140101;
+  background-color: #fff; /* Couleur de fond des suggestions 
+  border: 1px solid #ccc; /* Bordure des suggestions 
+  max-height: 200px; /* Hauteur maximale des suggestions avec défilement 
+  overflow-y: auto; /* Ajoutez une barre de défilement si nécessaire 
+}
+
+
+
+.mapboxgl-ctrl-directions {
+    width: 33.33333%;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.mapbox-form-label {
+    position: relative; 
+    top: 0;
+    left: 0;
+    background: #8a8acb;
+    color: #140101;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 0 0 0 3px;
+}
+
+.mapbox-directions-origin, .mapbox-directions-destination {
+    display: relative;
+}
+.mapbox-form-label .directions-icon{
+    display: none;
+}*/
