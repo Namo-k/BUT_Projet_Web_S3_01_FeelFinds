@@ -17,8 +17,8 @@ const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/navigation-night-v1',
-    center: [3.4999696897357, 48.6319425075],
-    zoom: 10,
+    center: [1.526502, 47.239457],
+    zoom: 5.5,
     pitch: 0,
     container: 'map',
     antialias: true
