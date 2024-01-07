@@ -4,7 +4,7 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Sélectionnez tous les noms de marqueurs de la table 'Marqueur'
-    $sql = "SELECT nomMarqueur FROM Marqueur";
+    $sql = "SELECT nomMarqueur FROM Marqueur ORDER BY nomMarqueur ASC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
