@@ -978,7 +978,8 @@ $('#btnAjouterLieu').on('click', function () {
     $('#ongletAjouterMarqueur').show();
 
     map.on('click', (e) => {
-        // Récupérer les coordonnées du clic
+        if ($('#ongletAjouterMarqueur').is(':visible')) {
+           // Récupérer les coordonnées du clic
         const coordinates = e.lngLat.toArray(); // Utilise toArray() pour obtenir un tableau [longitude, latitude]
         console.log('Coordonnées:', coordinates);
 
@@ -996,6 +997,8 @@ $('#btnAjouterLieu').on('click', function () {
 
         // Obtenir l'adresse à partir des coordonnées
         getAddressFromCoordinates(coordinates[1], coordinates[0]);
+        } 
+
     });
 
     // $('#btnAddLieu').on('click', function () {
