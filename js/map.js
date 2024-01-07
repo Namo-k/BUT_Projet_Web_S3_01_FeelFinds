@@ -631,6 +631,8 @@ function ongletAvisChargement(){
             $('.recentrer-avis').on('click', recentrerAvis);
             $('.favori-avis').on('click', favoriAvis);
 
+            $('#ongletFavori').hide();
+
         },
         error: function (error) {
             console.error('Erreur lors de la requête AJAX pour récupérer les avis de l\'utilisateur:', error);
@@ -643,6 +645,7 @@ $('#btn_modifierSupprimer').on('click', ongletAvisChargement);
 
 function ongletFavoriChargement(){
     var nbrAvis = 0;
+   
 
     $.ajax({
         type: 'GET',
@@ -718,7 +721,7 @@ function ongletFavoriChargement(){
             $('.supprimer-favori').on('click', supprimerFavori);
             $('.recentrer-avis').on('click', recentrerAvis);
 
-
+            
         },
         error: function (error) {
             console.error('Erreur lors de la requête AJAX pour récupérer les avis de l\'utilisateur:', error);
@@ -981,7 +984,21 @@ function supprimerMarqueurTemporaire() {
 
 $('input[name="latitude"]').on('input', supprimerMarqueurTemporaire);
 $('input[name="longitude"]').on('input', supprimerMarqueurTemporaire);
-$('.btn_retour').on('click', supprimerMarqueurTemporaire);
+$('.btn_retour').on('click', ()=>{
+    supprimerMarqueurTemporaire();
+    var textVide="";
+    $('select[name="nomMarqueur"]').val(textVide);
+    $('input[name="nomMarqueur"]').val(textVide);
+    $('textarea[name="avis"]').val(textVide);
+    $('input[name="sentiment"]').val(textVide);
+    $('input[name="idSentiment"]').val(textVide);
+    $('input[name="nomLieu"]').val(textVide);
+    $('input[name="latitude"]').val(textVide);
+    $('input[name="longitude"]').val(textVide);
+    $('textarea[name="addLieu"]').val(textVide);
+    $(".nom_sentiment").html(textVide);
+
+});
 
 
 function getAddressFromCoordinates(lat, lng) {

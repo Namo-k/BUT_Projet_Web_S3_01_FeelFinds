@@ -161,7 +161,7 @@
 
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
                         <div>
-                            <select name="nomMarqueur" class="inputA input_adresse">
+                            <select name="nomMarqueur" class="inputA input_adresse" required>
                                 <option value="">Choisissez votre lieu...</option>
                             </select>
                         </div>
@@ -187,12 +187,12 @@
 
                     <div class="description">
                         <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
-                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33" required> </textarea></div>
                     </div>
 
                     <button class="btn"> Enregistrer </button>
                     <img src="images/btn_retour.png" width="30px" class="btn_retour">
-                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment" required><br><br>
 
                 </form>
 
@@ -212,7 +212,7 @@
 
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
                         <div>
-                            <input readonly type="text" name="nomMarqueur" placeholder="  Choisissez votre lieu..." class="inputA input_adresse"><br><br>
+                            <input readonly type="text" name="nomMarqueur" placeholder="  Choisissez votre lieu..." class="inputA input_adresse" required><br><br>
                         </div>
 
                     </div>
@@ -235,12 +235,12 @@
 
                     <div class="description">
                         <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
-                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33" required> </textarea></div>
                     </div>
 
                     <button class="btn"> Modifier </button>
                     <img src="images/btn_retour.png" width="30px" class="btn_retour">
-                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment" requierd><br><br>
                     <input type="text" name="idSentiment" placeholder="id sentiment" class="inputA hidden inputIdSentiment"><br><br>
 
                 </form>
@@ -261,7 +261,7 @@
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
 
                         <!-- <label for="addLieu">Adresse : </label><input type="text" name="addLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputAdresseLieu"><br><br> -->
-                        <label for="nomLieu">Nom : </label><input type="text" name="nomLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputNomLieu"><br><br>
+                        <label for="nomLieu">Nom : </label><input type="text" name="nomLieu" placeholder="  Choisissez votre lieu..." class="inputA  inputNomLieu" required><br><br>
                         <label for="addLieu">Adresse : </label><br><span><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="addLieu" rows="5" cols="33" readonly> </textarea></span>
 
                     </div>
@@ -284,14 +284,14 @@
 
                     <div class="description">
                         <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
-                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33"> </textarea></div>
+                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33" required> </textarea></div>
                     </div>
 
                     <button class="btn"> Enregistrer </button>
                     <img src="images/btn_retour.png" width="30px" class="btn_retour">
-                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment"><br><br>
-                    <input type="text" name="latitude" placeholder="  Choisissez votre lieu..." class="inputA hidden inputLatitude"><br><br>
-                    <input type="text" name="longitude" placeholder="  Choisissez votre lieu..." class="inputA  hidden inputLongitude"><br><br>
+                    <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment" required><br><br>
+                    <input type="text" name="latitude" placeholder="  Choisissez votre lieu..." class="inputA hidden inputLatitude" readonly><br><br>
+                    <input type="text" name="longitude" placeholder="  Choisissez votre lieu..." class="inputA  hidden inputLongitude" readonly><br><br>
 
                 </form>
 
