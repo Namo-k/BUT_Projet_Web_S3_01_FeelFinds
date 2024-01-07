@@ -155,8 +155,13 @@
                 </div>
                 <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
 
+                <div class="erreur">
+                    <p id="msgErreurAjoutSentiment"></p>
+                </div>
+
                 <form action="php/ajoutSentiment.php" method="post">
 
+                    
                     <div class="adresse">
 
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
@@ -190,7 +195,7 @@
                         <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33" required> </textarea></div>
                     </div>
 
-                    <button class="btn"> Enregistrer </button>
+                    <button class="btn" id="btnAjoutSentiment"> Enregistrer </button>
                     <img src="images/btn_retour.png" width="30px" class="btn_retour">
                     <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment" required><br><br>
 

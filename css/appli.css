@@ -380,11 +380,28 @@ nav li:hover .sub-menu {
     transform: scale(0.98);
 }
 
+.btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
 .btn_retour {
     position: absolute;
     left: 85%;
     margin-top: 2.5%;
     cursor: pointer;
+}
+#msgErreurAjoutSentiment{
+    color:white;
+    border-radius: 5%;
+    display: block;
+    text-align: center;
+    padding: 10px 30px;
+    margin: 20px auto 0 auto;
+    background-color: #ff0000bf;
+    width: 60%;
+    font-weight: bold;
 }
 
 /* mapbox logo en bas a gauche */

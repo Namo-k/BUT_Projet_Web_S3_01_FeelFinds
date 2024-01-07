@@ -17,8 +17,8 @@ const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/navigation-night-v1',
-    center: [1.526502, 47.239457],
-    zoom: 5.5,
+    center: [3.4999696897357, 48.6319425075],
+    zoom: 10,
     pitch: 0,
     container: 'map',
     antialias: true
@@ -204,6 +204,7 @@ map.on('load', () => {
     map.on('click', () => {
         $('#ongletAvis').hide();
         $('#ongletFavori').hide();
+        erreurAjout(false);
     });
 
     // When a click event occurs on a feature in
@@ -282,6 +283,8 @@ map.on('load', () => {
                     'festif': 0
                 };
 
+
+
                 avis.forEach(function (avisItem) {
 
                     console.log("avisItem");
@@ -307,6 +310,11 @@ map.on('load', () => {
                         var modifyButton = $('<button class="modifier-avis">Modifier</button>');
                         modifyButton.data('idSentiment', avisItem.IdSentiment);
                         avisBlock.append(modifyButton);
+
+                        erreurAjout(true);
+                    }
+                    else{
+                        erreurAjout(false);
                     }
 
                     avisBlock.append('<div class="traitBlanc"></div>');
@@ -314,6 +322,10 @@ map.on('load', () => {
                     $('.avis').append(avisBlock);
                     console.log(avisBlock);
                 });
+
+                if(avis.length === 0){
+                    erreurAjout(false);
+                }
 
 
                 for (var sentimentType in counts) {
@@ -511,6 +523,23 @@ function stripHtmlTags(htmlString) {
     // Remplace toutes les balises HTML par une chaîne vide
     return htmlString.replace(/<\/?[^>]+(>|$)/g, "");
 }
+
+function erreurAjout(bool){
+    if(bool == true){
+        if ($('#ongletAjouter').is(':visible')) {
+            $("#ongletAjouter #msgErreurAjoutSentiment").show();
+            $("#ongletAjouter #msgErreurAjoutSentiment").text("Impossible d'ajouter un autre sentiment ici. Modifiez plutôt.")
+            $('#ongletAjouter .btn').prop('disabled', true);
+
+        } 
+    }else{
+        if ($('#ongletAjouter').is(':visible')) {
+            $("#ongletAjouter #msgErreurAjoutSentiment").hide();
+            $('#ongletAjouter .btn').prop('disabled', false);
+        } 
+    } 
+}
+
 
 $.ajax({
     type: 'GET',
@@ -766,6 +795,8 @@ function modifierAvis() {
     // Récupérer l'ID de l'avis à modifier
     var idSentiment = $(this).data('idSentiment');
 
+    $('#ongletAjouter').hide();
+
     // Récupérer les détails de l'avis depuis le serveur
     $.ajax({
         type: 'GET',
@@ -997,7 +1028,7 @@ $('.btn_retour').on('click', ()=>{
     $('input[name="longitude"]').val(textVide);
     $('textarea[name="addLieu"]').val(textVide);
     $(".nom_sentiment").html(textVide);
-
+    erreurAjout(false);
 });
 
 

@@ -48,6 +48,8 @@ function ajouter() {
     document.getElementById("ongletAvis").style.display = "none";
     document.getElementById("ongletFavori").style.display = "none";
     document.getElementById("ongletAjouter").style.display = "block";
+    $("#ongletAjouter #msgErreurAjoutSentiment").hide();
+    $('select[name="nomMarqueur"]').val("");
 }
 
 function ouvertureFavori() {
@@ -61,6 +63,7 @@ function retour() {
     document.getElementById("ongletModifier").style.display = "none";
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
     document.getElementById("ongletFavori").style.display = "none";
+    erreurAjout(false);
 }
 function typeWriter() {
     if (i < txt.length) {
