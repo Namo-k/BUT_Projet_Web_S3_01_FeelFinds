@@ -34,6 +34,15 @@
 
 
     <div id="profil">
+
+    <div class="switch">
+        <input type="checkbox" class="switch__input" id="switch">
+        <label class="switch__label" for="switch">
+            <span class="switch__indicator"></span>
+            <span class="switch__decoration"></span>
+        </label>
+    </div>
+
         <div id="pseudo">
             <div id="login">
                 <?php if (isset($_SESSION['id'])) { ?>
@@ -52,7 +61,7 @@
         </div>
         <?php if (isset($_SESSION['id'])) { ?>
             <nav>
-                <li> <a href="#">
+                <li> <a href="php/profil.php">
                         <div id="photoAvatar"><img src="images/connexion.png" width="60px"></div>
                     </a>
                     <ul class="sub-menu">

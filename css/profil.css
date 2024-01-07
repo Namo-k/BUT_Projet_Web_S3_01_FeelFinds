@@ -137,3 +137,10 @@ footer {
   .close:hover {
     color: #cc0000;
   }
+
+  .error {
+	color: red;
+}
+.success {
+	color: green;
+}

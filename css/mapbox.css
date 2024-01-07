@@ -78,10 +78,10 @@
 .mapboxgl-ctrl-geocoder ul {
     color: black;
   background-color:#fff;
-  border-radius: 0 0 3px 3px;
+  border-radius: 5px;
   left:0;
   list-style:none;
-  margin:0;
+  margin-top:2px;
   padding:0;
   position:absolute;
   width:100%;
@@ -174,9 +174,10 @@
   z-index:1;
   }
   .directions-control.directions-control-directions {
-    background:rgba(0,0,0,0.75);
+    border-radius: 15px;
+    background:rgba(255, 255, 255, 0.847);
     margin: 7px 0 0;
-    color:#fff;
+    color:#000000;
     top:0;
     right:0;
     bottom:0;
@@ -251,6 +252,7 @@
   padding:2px;
   border-radius:15px;
   vertical-align:middle;
+
   }
   .mapbox-directions-profile label {
     cursor:pointer;
@@ -278,11 +280,13 @@
     }
 
 /* Routes */
+
 .mapbox-directions-routes ul {
   list-style:none;
   margin:0;
   padding:10px 10px 0 10px;
   border-bottom:1px solid rgba(255,255,255,.25);
+  
   }
 
 .mapbox-directions-routes li {
@@ -291,7 +295,7 @@
   display:block;
   position:relative;
   cursor:pointer;
-  color:rgba(255,255,255,.5);
+  color:rgba(0, 0, 0, 0.669);
   min-height:60px;
   }
 
@@ -308,16 +312,18 @@
 
 /* Route Summary */
 .mapbox-directions-route-summary {
+  border-radius: 15px 15px 0px 0px;
   position: relative;
   z-index:1;
   width:100%;
-  background-color:rgba(0,0,0,0.75);
+  background-color:rgba(255, 0, 0, 0.75);
   color:#fff;
   padding:5px 10px;
   font-size:15px;
   line-height:28px;
   }
   .mapbox-directions-route-summary + .mapbox-directions-instructions {
+
     }
   .mapbox-directions-route-summary h1 {
     font-weight:500;
@@ -327,12 +333,13 @@
     line-height:inherit;
     }
   .mapbox-directions-route-summary span {
-    color:rgba(255,255,255,0.5);
+    color:rgba(255, 255, 255, 0.5);
     margin:0 5px;
     }
 
   /* Alt route selection */
   .mapbox-directions-instructions {
+    background-color:rgba(190, 190, 190, 0.738);
       overflow: scroll;
     }
     .mapbox-directions-instructions-wrapper {
@@ -346,7 +353,7 @@
   .mapbox-directions-routes input[type=radio] { display: none;}
   .mapbox-directions-routes input[type=radio]:not(:checked) + .button:before { width: 0;}
   .mapbox-directions-routes input[type=radio] + label {
-    background-color:rgba(255,255,255,0.10);
+    background-color:rgba(255, 255, 255, 0.288);
     float:left;
     padding:0 10px;
     cursor:pointer;
@@ -354,6 +361,7 @@
     .mapbox-directions-routes input[type=radio] + label:hover,
     .mapbox-directions-routes input[type=radio]:checked + label {
       background-color:rgba(255,255,255,0.25);
+      border-radius: 15px;
       }
 
 /* Instructions */
@@ -373,7 +381,7 @@
   line-height:25px;
   }
 .mapbox-directions-step-distance {
-  color:rgba(255,255,255,.5);
+  color:rgb(0, 44, 177);
   position:absolute;
   padding:5px 10px;
   font-size:12px;
@@ -388,7 +396,7 @@
   }
   .mapbox-directions-step {
     position:relative;
-    color:rgba(255,255,255,.75);
+    color:rgb(0, 0, 0);
     cursor:pointer;
     padding:20px 20px 20px 40px;
     font-size:14px;
@@ -398,7 +406,7 @@
     }
     .mapbox-directions-step * { pointer-events:none; }
     .mapbox-directions-step:hover {
-      color:white;
+      color:rgb(77, 77, 77);
       }
     .mapbox-directions-step:after {
       content:'';
@@ -417,7 +425,7 @@
   display:block;
   background-color:#444;
   border-radius:50%;
-  box-shadow:0 0 5px 0 rgba(0,0,0,0.5);
+  box-shadow:0 0 5px 0 rgba(137, 137, 137, 0.5);
   }
   .mapbox-marker-drag-icon-step {
     background-color:#3BB2D0;
@@ -503,4 +511,9 @@
   }
   .directions-icon-waypoint {
     background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjAgMjAiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMjAwLC05OTIuMzYyMTgpIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwtMSwxLDIwMDQuNzI0NCkiIG9wYWNpdHk9IjAuNSIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEsLTIpIi8+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsLTEsMSwyMDI0LjcyNDQpIiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTMyMTUgMTAwMS40YzAgMi44LTUgOC01IDggMCAwLTUtNS4yLTUtOCAwLTIuOCAyLjItNSA1LTUgMi44IDAgNSAyLjIgNSA1eiIgZmlsbD0iI0ZGRiIvPjwvZz48L3N2Zz4=);
+  }
+
+.directions-control-instructions{
+margin-left: 30%;
+width: 85%;
   }

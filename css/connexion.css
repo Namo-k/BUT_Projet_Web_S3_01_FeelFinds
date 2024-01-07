@@ -21,7 +21,7 @@ body {
 
 .clearfix:after {
 	clear: both;
-	display: block
+	display: block;
 }
 
 a {
@@ -31,7 +31,8 @@ a {
 
 .conteneur-login {
 	display: flex;
-	margin-left: 13%;
+	margin-left: 17%;
+	margin-top: 2%;
 }
 
 .login-wrap {
@@ -196,10 +197,15 @@ a {
 .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
 	transform: rotate(0);
 }
-
 .hr {
 	height: 2px;
 	margin: 40px 0 40px 0;
+	background: rgba(255, 255, 255, .2);
+}
+
+.hr2 {
+	height: 2px;
+	margin: 8px 0 40px 0;
 	background: rgba(255, 255, 255, .2);
 }
 
@@ -211,4 +217,12 @@ a {
 	line-height: normal;
 	font-size: 18px;
 	color: white;
+}
+
+
+.error {
+	color: red;
+}
+.errorConnexion {
+	color: red;
 }
