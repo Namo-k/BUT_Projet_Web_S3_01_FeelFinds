@@ -355,7 +355,11 @@ map.on('load', () => {
 
     loadMarkeur();
 
-    $("#btnAnnulerFiltre").on("click", loadMarkeur);
+    $("#btnAnnulerFiltre").on("click", ()=>{
+        $("#onglet_2 .nom_sentiment").html("Testez ! ");
+        $("#onglet_2 #description_sentiment").html("Choisissez un sentiment");
+        loadMarkeur();
+    });
 
 
     function loadMarkeur() {
@@ -599,7 +603,7 @@ function ongletAvisChargement(){
                 'festif': 0
             };
 
-            $('#ongletAvis').show();
+            $('#ongletAvis').toggle();
 
             var nomMarqueur = data.nomMarqueur;
             var avis = data.avis;
@@ -698,7 +702,7 @@ function ongletFavoriChargement(){
                 'festif': 0
             };
 
-            $('#ongletFavori').show();
+            $('#ongletFavori').toggle();
 
             var avis = data.avis;
 
