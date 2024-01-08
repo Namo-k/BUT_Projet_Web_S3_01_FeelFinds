@@ -1,7 +1,7 @@
 const sentiments = [
     { nom: "Epoustouflant", desc: "Fais-toi surprendre ! " },
-    { nom: "Triste", desc: "Batterie de ... à 1%" },
-    { nom: "Amour", desc: "Un moment mémorable avec votre âme soeur ?" },
+    { nom: "Triste", desc: "Batterie de tristesse à 99%..." },
+    { nom: "Amour", desc: "Un amour partagé inoubliable ?" },
     { nom: "Joyeux", desc: "Croques la vie à pleine dent !" },
     { nom: "Emouvant", desc: "Pleurer de joie !" },
     { nom: "Festif", desc: "Un endroit amusant et convivial !" }

@@ -87,8 +87,8 @@ const directions = new MapboxDirections({
         instructions: true // Activez les instructions dans le panneau
     },
     interactive: false,
-    placeholderOrigin: 'Entrez votre lieu de départ', // Placeholder personnalisé pour l'origine
-    placeholderDestination: 'Entrez votre lieu de destination',// Désactive la capture automatique des clics pour ce contrôle
+    placeholderOrigin: 'Entrez votre lieu de départ...', // Placeholder personnalisé pour l'origine
+    placeholderDestination: 'Entrez votre lieu de destination...',// Désactive la capture automatique des clics pour ce contrôle
     profile: 'mapbox/driving',
     geocoder: {
         bbox: [-5.0, 41.0, 9.5, 51.5],
@@ -606,7 +606,7 @@ function ongletAvisChargement(){
 
             $('#ongletAvis .nomMarqueur').text(nomMarqueur);
 
-            $('#ongletAvis .nomMarqueur').text('Avis de ' + data.sessionName);
+            $('#ongletAvis .nomMarqueur').text('Propriétaire : ' + data.sessionName);
 
             $('#ongletAvis .nbrSentiment').empty();
             $('#ongletAvis .nbrAvis').empty();
@@ -618,10 +618,10 @@ function ongletAvisChargement(){
                 counts[avisItem.Sentiment.toLowerCase()]++;
 
 
-                var avisBlock = $('<div>');
-                avisBlock.append('<p>Lieu : ' + avisItem.nomMarqueur + '</p>');
-                avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
-                avisBlock.append('<p>Avis : ' + avisItem.Avis + '</p>');
+                var avisBlock = $('<div id="avis">');
+                avisBlock.append('<p class ="avisTitre"> Lieu : </p>' + '<p id="nomLieu">' + avisItem.nomMarqueur + '</p>');
+                avisBlock.append('<p id ="avisSentiment">  Sentiment : </p>' + '<div id="sentiment">'+ '<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis" id="avisEmoji">' + '</div>');
+                avisBlock.append('<p class ="avisTitre"> Avis : </p>' + '<p id="avisTexte">' + '&nbsp' + '&nbsp' + avisItem.Avis + '</p>');
 
                 var deleteButton = $('<button class="supprimer-avis">Supprimer</button>');
                 deleteButton.data('idSentiment', avisItem.IdSentiment);
@@ -646,14 +646,15 @@ function ongletAvisChargement(){
                 ++nbrAvis;
             });
 
+            $('#ongletAvis .nbrSentiment').append('<p> &nbsp &nbsp <p>');
             for (var sentimentType in counts) {
                 if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
-                    $('#ongletAvis .nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
-                    $('#ongletAvis .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                    $('#ongletAvis .nbrSentiment').append('<p> ' + counts[sentimentType] + '&nbsp </p>');
+                    $('#ongletAvis .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis"> &nbsp &nbsp ');
                 }
             }
 
-            $('#ongletAvis .nbrAvis').append('<p> Nombre Avis : ' + nbrAvis + '</p>');
+            $('#ongletAvis .nbrAvis').append('<p id="nombreTotalAvis"> Nombre total avis : ' + nbrAvis + '</p>');
 
             $('.supprimer-avis').on('click', supprimerAvis);
             $('.modifier-avis').on('click', modifierAvis);
@@ -716,7 +717,7 @@ function ongletFavoriChargement(){
                 counts[avisItem.Sentiment.toLowerCase()]++;
   
                 var avisBlock = $('<div>');
-                avisBlock.append('<p>Lieu : ' + avisItem.nomMarqueur + '</p>');
+                avisBlock.append('<p >Lieu : ' + avisItem.nomMarqueur + '</p>');
                 avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
                 avisBlock.append('<p>Avis : ' + avisItem.Avis + '</p>');
 

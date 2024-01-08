@@ -97,7 +97,6 @@
                     <p class="sous_onglet_info"> Aller à un endroit en particulier ? </p>
                     <div id="directions-container"></div>
 
-                   
                 </div>
 
                 <div class="line"></div>
@@ -137,10 +136,11 @@
                         </div>
                         <p class="sous_onglet_info"> Envie d'alimenter votre sentithèque? </p>
                         <div class="choix">
-                            <p class="bouton" id="btn_ajouter"> Ajouter un sentiment</p>
-                            <p class="bouton" id="btn_modifierSupprimer"> Modifier ou Supprimer </p>
-                            <p class="bouton" id="btn_favori"> Consulter Favori </p>
+                                <p class="bouton" id="btn_ajouter"> Ajouter un sentiment</p>
+                                <img src="images/ecrire.png" id="ecrire">
+                                <p class="bouton" id="btn_modifierSupprimer"> Modifier ou Supprimer </p>
                         </div>
+                        <p class="bouton" id="btn_favori"> Consulter mes favoris <img src="images/etoile.png"> </p> 
                     </div>
 
 
@@ -167,11 +167,12 @@
                         <p class="txtInfo"> &nbsp • &nbsp Adresse du lieu : </p>
                         <div>
                             <select name="nomMarqueur" class="inputA input_adresse" required>
-                                <option value="">Choisissez votre lieu...</option>
+                                <option value="" id="inputALieu">&nbsp Choisissez votre lieu...</option>
                             </select>
                         </div>
-                        <p>Lieu introuvable ? <span id="btnAjouterLieu" style="cursor:pointer;">Ajouter un lieu</span></p>
-
+                        <div id="ajouterLieu"> 
+                            <p> Lieu introuvable ? <span id="btnAjouterLieu" style="">Ajouter un lieu</span></p>
+                        </div>
                     </div>
 
                     <div class="sentiments">
@@ -192,7 +193,7 @@
 
                     <div class="description">
                         <p class="txtInfo"> &nbsp • &nbsp Description du moment : </p>
-                        <div><textarea class="input_desc inputD" placeholder="Describe yourself here..." name="avis" rows="5" cols="33" required> </textarea></div>
+                        <div><textarea class="input_desc inputD" placeholder=" Décrivez votre moment..." name="avis" rows="5" cols="33" required> </textarea></div>
                     </div>
 
                     <button class="btn" id="btnAjoutSentiment"> Enregistrer </button>
@@ -297,27 +298,28 @@
                     <input type="text" name="sentiment" placeholder="  Choisissez votre lieu..." class="inputA hidden inputSentiment" required><br><br>
                     <input type="text" name="latitude" placeholder="  Choisissez votre lieu..." class="inputA hidden inputLatitude" readonly><br><br>
                     <input type="text" name="longitude" placeholder="  Choisissez votre lieu..." class="inputA  hidden inputLongitude" readonly><br><br>
-
                 </form>
-
             </div>
-
         </div>
 
         <div id="ongletAvis" class="ongletDroite">
-            <p class="fermeAvis">< Retour</p>
-            <h3>Info marqueur </h3>
+
+        <p class="fermeAvis"> <img src="images/btn_retour.png" width="25px"> </p>
+            <p id="titreAvis"> Ma sentithèque </p>
+            <div class="line"></div>
+            
             <p class="nomMarqueur">Nom marqueur</p>
             <div class="nbrAvis"></div>
-            <div class="nbrSentiment"></div>
+            <div class="nbrSentiment"> </div>
+            <div class="line"></div>
 
-            <div class="traitBlanc1"></div>
             <div class="avis">
-                <p class="sentiment">Sentiment</p>
-                <p class="avis">Avis</p>
+                <p class="sentiment">Sentiment : </p>
+                <p class="avis"> Mon ressenti : </p>
                 <p class="personne">Personne</p>
             </div>
         </div>
+
         <div id="ongletFavori" class="ongletDroite">
             <p class="fermeFavori">< Retour</p>
             <h3>Favori marqueur </h3>
@@ -330,6 +332,8 @@
                 <p class="sentiment">Sentiment</p>
                 <p class="avis">Avis</p>
                 <!-- <p class="personne">Personne</p> -->
+
+            
             </div>
         </div>
 

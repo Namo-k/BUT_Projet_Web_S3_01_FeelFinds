@@ -117,7 +117,6 @@ nav li:hover .sub-menu {
     height: 100vh;
     text-align: center;
     background-image: linear-gradient(#0F4A81, #274c6fd2, rgba(69, 89, 149, 0.679));
-    /*linear-gradient(to left , rgba(164, 172, 234, 0.754),rgba(237, 126, 126, 0.754));*/
     background-color: rgba(230, 113, 113, 0.754);
     color: white;
     border-right: 1px solid white;
@@ -214,18 +213,6 @@ nav li:hover .sub-menu {
     margin-left: 2%;
 }
 
-.loupe {
-    margin-left: -25px;
-    cursor: pointer;
-    width: 20px;
-    height: 24px;
-}
-
-/* #loupe2 {
-    position: absolute;
-    top: 39.2%;
-    right: 14%;
-} */
 
 #input_depart::placeholder {
     color: #13528d;
@@ -267,13 +254,38 @@ nav li:hover .sub-menu {
     margin-bottom: 6%;
 }
 
+#btnAnnulerFiltre {
+    margin-bottom: 8px;
+    margin-left: 11px;
+    cursor: pointer;
+}
+
 .choix {
-    /* width: 80%; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin: 0 auto; */
+    width: 90%; 
+    margin: 0 auto;
     margin-top: 5%;
+    display: flex;
+    line-height: 24px;
+}
+
+#ecrire {
+    width: 10%;
+    height: 15%;
+    margin-top: 1%;
+}
+
+#btn_modifierSupprimer {
+    width: 30%;
+}
+
+#btn_ajouter {
+    width: 30%;
+}
+
+#btn_favori {
+    margin-top: 1%;
+    line-height: 35px;
+    width: 44%; 
 }
 
 .bouton {
@@ -281,6 +293,7 @@ nav li:hover .sub-menu {
     font-size: 17px;
     font-weight: 500;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .bouton:hover {
@@ -297,7 +310,11 @@ nav li:hover .sub-menu {
     font-size: 15px;
 }
 
-/* ------------- */
+/* ------------- AJOUTER UN SENTIMENT ------------- */
+
+.geocoder-icon geocoder-icon-search {
+    background-color: red;
+}
 
 .inputA {
     margin-left: 4%;
@@ -318,6 +335,21 @@ nav li:hover .sub-menu {
     width: 80%;
     margin: 0 auto;
     margin-top: 7%;
+}
+
+#ajouterLieu {
+    padding: 4px 0px;
+}
+
+#btnAjouterLieu {
+    cursor: pointer;
+    font-style: italic;
+}
+
+#btnAjouterLieu:hover {
+    color: #74B1DD;
+    font-weight: 600;
+    transition: 0.5s;
 }
 
 .txtInfo {
@@ -421,10 +453,7 @@ nav li:hover .sub-menu {
     bottom: 20px;
 }  */
 
-#menuOnglet {
-    display: flex;
-}
-
+/* ---------------- MODIFIER OU SUPPRIMER UN SENTIMENT */
 
 .ongletDroite {
     position: relative;
@@ -440,25 +469,74 @@ nav li:hover .sub-menu {
     display: none;
 }
 
-.traitBlanc {
-    height: 1px;
-    width: 50px;
-    background-color: white;
-    display: block;
-    margin: auto;
+#menuOnglet {
+    display: flex;
 }
 
-.traitBlanc1 {
-    height: 3px;
-    width: 150px;
-    background-color: white;
-    display: block;
-    margin: auto;
+.fermeAvis {
+    cursor: pointer;
+    position: fixed;
+    float: left;
+    margin-left: 28px;
+    margin-top: 20.5px;
 }
 
 .ferme{
     cursor: pointer;
 }
+
+#nombreTotalAvis {
+    margin-block-start: 0em;
+    margin-block-end: 8px;
+}
+
+#titreAvis {
+    margin-bottom: 20px;
+    font-family: 'Patua One';
+    font-size: 21px;
+}
+
+#avis {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.avisTitre {
+    display: flex;
+    padding-left: 36px;
+    width: 16%;
+    font-weight: 600;
+    align-items: center;
+}
+
+#avisSentiment {
+    display: flex;
+    padding-left: 35px;
+    width: 28%;
+    font-weight: 600;
+    align-items: center;
+}
+
+#sentiment {
+    width: 60%;
+}
+
+#avisEmoji {
+    margin-top: 10px;
+    float: left;
+}
+
+#nomLieu {
+    display: flex;
+    width: 70%;
+}
+
+#avisTexte {
+    display: flex;
+    width: 70%;
+}
+
+
 
 .nbrSentiment{
     display: flex;
