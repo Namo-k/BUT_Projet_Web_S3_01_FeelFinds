@@ -5,8 +5,10 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $mdp = $_POST['mdp'];
 
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+    // $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
 
+    include("connexionBd.php");
+    
     $sql = "SELECT * FROM user where mail ='$id'";
     $result = $db->prepare($sql);
     $result->execute();
@@ -36,8 +38,7 @@ if (isset($_POST['submit'])) {
     }
 } else {
 
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
-
+    include('connexionBd.php');
     $mail = $_POST['mailInscr'];
     $pseudo = $_POST['pseudoInscr'];
     $pass = $_POST['mdpInscr'];

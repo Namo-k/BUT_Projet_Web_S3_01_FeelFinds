@@ -3,7 +3,7 @@ session_start();
 
 try {
     // Établir une connexion à la base de données
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+    include('connexionBd.php');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Vérifiez si l'utilisateur est connecté (vous devrez peut-être adapter cela selon votre méthode d'authentification)

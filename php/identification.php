@@ -8,7 +8,7 @@ $common_words = array('password', '123456', 'admin', 'user');
 if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $mdp = $_POST['mdp'];
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+    include('connexionBd.php');
     $sql = "SELECT * FROM user where mail ='$id'";
     $result = $db->prepare($sql);
     $result->execute();

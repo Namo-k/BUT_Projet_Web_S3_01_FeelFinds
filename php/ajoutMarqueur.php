@@ -13,7 +13,7 @@ if (isset($_POST['latitude'], $_POST['longitude'], $_POST['nomLieu'], $_POST['se
 
     // Utilisez PDO pour se connecter à la base de données
     try {
-        $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+        include('connexionBd.php');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Insertion du marqueur dans la table marqueur

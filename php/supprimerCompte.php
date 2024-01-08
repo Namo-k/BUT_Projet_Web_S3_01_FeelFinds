@@ -6,8 +6,8 @@ if (isset($_POST['confirmer'])) {
 
     $mdp = $_POST['anmdp'];
     $user = $_SESSION['id'];
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
-    $sql = "SELECT * FROM user where pseudo ='$user'";
+    include('connexionBd.php');
+        $sql = "SELECT * FROM user where pseudo ='$user'";
     $result = $db->prepare($sql);
     $result->execute();
     $data = $result->fetchAll();

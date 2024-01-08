@@ -15,7 +15,9 @@ if (!isset($_GET['idSentiment'])) {
 
 try {
     // Connexion à la base de données (utilisez PDO pour la sécurité)
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+
+    include('connexionBd.php');
+    
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Récupérez l'ID du sentiment à partir de la requête GET

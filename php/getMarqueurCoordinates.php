@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données (assurez-vous de la configurer correctement)
-$db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+include('connexionBd.php');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Récupérez le nom du marqueur depuis la requête AJAX

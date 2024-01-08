@@ -3,8 +3,7 @@
 try {
     //NE PAS EXECUTER CE FICHIER SVP
     //CA VA RAJOUTER DES MARQUEURS DEJA EXISTANT
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds_test', 'root', '');
- 
+    include('connexionBd.php'); 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

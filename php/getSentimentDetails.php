@@ -15,8 +15,8 @@ if (!isset($_GET['idSentiment'])) {
 
 try {
     // Connexion à la base de données (utilisez PDO pour la sécurité)
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include('connexionBd.php');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Récupérez l'ID de l'utilisateur connecté
     $userNom = $_SESSION['id'];

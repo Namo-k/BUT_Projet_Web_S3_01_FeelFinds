@@ -2,7 +2,7 @@
 
 session_start();
 try {
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+    include('connexionBd.php');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Récupérer l'idMarqueur à partir du nom du marqueur

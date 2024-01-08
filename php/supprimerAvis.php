@@ -15,8 +15,8 @@ $sentimentId = $_POST['idSentiment'];
 
 try {
     // dbexion à la base de données avec PDO
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
-    // Configurer PDO pour rapporter toutes les erreurs
+    include('connexionBd.php');
+        // Configurer PDO pour rapporter toutes les erreurs
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Requête SQL pour supprimer l'avis de l'utilisateur dbecté

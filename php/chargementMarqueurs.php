@@ -1,6 +1,6 @@
 <?php
 try {
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
+    include('connexionBd.php');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Sélectionnez tous les noms de marqueurs de la table 'Marqueur'

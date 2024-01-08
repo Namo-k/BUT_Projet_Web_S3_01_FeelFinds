@@ -1,7 +1,6 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
-
+include('connexionBd.php');
 
 $nomMarqueur = $_GET['nom'];
 

@@ -3,8 +3,8 @@ session_start();
 
 // Connexion à la base de données
 try {
-    $db = new PDO('mysql:host=localhost;dbname=bd_feelfinds', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include('connexionBd.php');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo json_encode(['error' => 'Erreur de connexion à la base de données']);
     exit;
