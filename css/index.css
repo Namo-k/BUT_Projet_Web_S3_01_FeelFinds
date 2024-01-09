@@ -21,7 +21,7 @@ p {
 }
 
 #container {
-    width: 40%;
+    width: 70%;
     margin-left: 8%;
     margin-top: 2.5%;
     height: 50%;
@@ -29,6 +29,7 @@ p {
 
 #titre {
     width: 70%;
+    background-color: red;
     text-transform: uppercase;
     font-size: 65px;
     font-family: Abril fatface;
@@ -36,12 +37,6 @@ p {
 
 #titre1 {
     background: linear-gradient(#F00 10.4%, #aa5050 88%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#titre2 {
-    background: linear-gradient(#F00 10.4%, rgb(139, 76, 76) 88%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

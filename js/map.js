@@ -327,11 +327,10 @@ map.on('load', () => {
                     erreurAjout(false);
                 }
 
-
                 for (var sentimentType in counts) {
                     if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
-                        $('.nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
-                        $('.nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                        $('.nbrSentiment').append('<p> ' + counts[sentimentType] + ' </p>');
+                        $('.nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis"> ');
                     }
                 }
 
@@ -627,11 +626,7 @@ function ongletAvisChargement(){
                 avisBlock.append('<p id ="avisSentiment">  Sentiment : </p>' + '<div id="sentiment">'+ '<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis" id="avisEmoji">' + '</div>');
                 avisBlock.append('<p class ="avisTitre"> Avis : </p>' + '<p id="avisTexte">' + '&nbsp' + '&nbsp' + avisItem.Avis + '</p>');
 
-                var deleteButton = $('<button class="supprimer-avis">Supprimer</button>');
-                deleteButton.data('idSentiment', avisItem.IdSentiment);
-                console.log(avisItem.IdSentiment)
-                avisBlock.append(deleteButton);
-
+                avisBlock.append('<div class ="container-avis">');
                 var modifyButton = $('<button class="modifier-avis">Modifier</button>');
                 modifyButton.data('idSentiment', avisItem.IdSentiment);
                 avisBlock.append(modifyButton);
@@ -640,14 +635,22 @@ function ongletAvisChargement(){
                 recentrerBtn.data('idSentiment', avisItem.IdSentiment);
                 avisBlock.append(recentrerBtn);
 
-                var favoriBtn = $('<button class="favori-avis">Favori</button>');
+                var deleteButton = $('<button class="supprimer-avis">Supprimer</button>');
+                deleteButton.data('idSentiment', avisItem.IdSentiment);
+                console.log(avisItem.IdSentiment)
+                avisBlock.append(deleteButton);
+
+                var favoriBtn = $('<button class="favori-avis"> Favori </button>');
                 favoriBtn.data('idSentiment', avisItem.IdSentiment);
                 avisBlock.append(favoriBtn);
 
-                avisBlock.append('<div class="traitBlanc"></div>');
+                avisBlock.append('<div class="line2"></div>');
 
+                avisBlock.append('</div>');
                 $('#ongletAvis .avis').append(avisBlock);
                 ++nbrAvis;
+
+                avisBlock.append('</div>');
             });
 
             $('#ongletAvis .nbrSentiment').append('<p> &nbsp &nbsp <p>');
@@ -709,7 +712,7 @@ function ongletFavoriChargement(){
             console.log(avis);
 
 
-            $('#ongletFavori .nomPersonne').text('Avis de ' + data.sessionName);
+            $('#ongletFavori .nomPersonne').text('Propriétaire : ' + data.sessionName);
 
             $('#ongletFavori .nbrSentiment').empty();
             $('#ongletFavori .nbrAvis').empty();
@@ -720,36 +723,37 @@ function ongletFavoriChargement(){
             
                 counts[avisItem.Sentiment.toLowerCase()]++;
   
-                var avisBlock = $('<div>');
-                avisBlock.append('<p >Lieu : ' + avisItem.nomMarqueur + '</p>');
-                avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
-                avisBlock.append('<p>Avis : ' + avisItem.Avis + '</p>');
+                var avisBlock = $('<div id="avis">');
+                avisBlock.append('<p class ="avisTitre"> Lieu : </p>' + '<p id="nomLieu">' + avisItem.nomMarqueur + '</p>');
+                avisBlock.append('<p id ="avisSentiment">  Sentiment : </p>' + '<div id="sentiment">'+ '<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis" id="avisEmoji">' + '</div>');
+                avisBlock.append('<p class ="avisTitre"> Avis : </p>' + '<p id="avisTexte">' + '&nbsp' + '&nbsp' + avisItem.Avis + '</p>');
 
-                
+                avisBlock.append('<div class ="container-avis-favori">');
                 var recentrerBtn = $('<button class="recentrer-avis">Recentrer</button>');
                 recentrerBtn.data('idSentiment', avisItem.IdSentiment);
                 avisBlock.append(recentrerBtn);
 
-                var deleteButton = $('<button class="supprimer-favori">Supprimer Favori</button>');
+                var deleteButton = $('<button class="supprimer-favori">Supprimer</button>');
                 deleteButton.data('idSentiment', avisItem.IdSentiment);
                 console.log(avisItem.IdSentiment)
                 avisBlock.append(deleteButton);
 
-               
-                avisBlock.append('<div class="traitBlanc"></div>');
+                avisBlock.append('<div class="line2"></div>');
+                avisBlock.append('</div>');
 
                 $('#ongletFavori .avis').append(avisBlock);
                 ++nbrAvis;
             });
 
+            $('#ongletFavori .nbrSentiment').append('<p> &nbsp &nbsp <p>');
             for (var sentimentType in counts) {
                 if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
-                    $('#ongletFavori .nbrSentiment').append('<p> ' + counts[sentimentType] + '</p>');
-                    $('#ongletFavori .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis">');
+                    $('#ongletFavori .nbrSentiment').append('<p> ' + counts[sentimentType] + '&nbsp </p>');
+                    $('#ongletFavori .nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis"> &nbsp &nbsp');
                 }
             }
 
-            $('#ongletFavori .nbrAvis').append('<p> Nombre de Favori : ' + nbrAvis + '</p>');
+            $('#ongletFavori .nbrAvis').append('<p> Nombre de favoris : ' + nbrAvis + '</p>');
 
 
             $('.supprimer-favori').on('click', supprimerFavori);

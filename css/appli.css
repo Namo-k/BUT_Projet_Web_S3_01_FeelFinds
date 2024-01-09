@@ -481,6 +481,14 @@ nav li:hover .sub-menu {
     margin-top: 20.5px;
 }
 
+.fermeFavori {
+    cursor: pointer;
+    position: fixed;
+    float: left;
+    margin-left: 28px;
+    margin-top: 20.5px;
+}
+
 .ferme{
     cursor: pointer;
 }
@@ -499,14 +507,6 @@ nav li:hover .sub-menu {
 #avis {
     display: flex;
     flex-wrap: wrap;
-}
-
-.avisTitre {
-    display: flex;
-    padding-left: 36px;
-    width: 16%;
-    font-weight: 600;
-    align-items: center;
 }
 
 #avisSentiment {
@@ -528,16 +528,106 @@ nav li:hover .sub-menu {
 
 #nomLieu {
     display: flex;
-    width: 70%;
+    width: 68%;
+}
+
+.avisTitre {
+    display: flex;
+    padding-left: 36px;
+    width: 16%;
+    font-weight: 600;
+    align-items: center;
+    margin-bottom: 6.5%;
 }
 
 #avisTexte {
     display: flex;
-    width: 70%;
+    width: 66%;
 }
 
+.container-avis {
+    margin-left: 9%;
+    margin-bottom: 5%;
+}
 
+.container-avis-favori {
+    margin-left: 22.25%;
+    margin-bottom: 5%;
+}
 
+.modifier-avis {
+    width: 25%;
+    margin: 0 1.5%;
+    height: 21px;
+    border-radius: 3px;
+    border: white;
+    background: #74B1DD;
+    color: white;
+    cursor: pointer;
+}
+
+.recentrer-avis {
+    width: 25%;
+    margin: 0 1.5%;
+    height: 21px;
+    border-radius: 3px;
+    border: white;
+    background: #74B1DD;
+    color: white;
+    cursor: pointer;
+}
+
+.supprimer-avis {
+    width: 25%;
+    margin: 0 1.5%;
+    height: 21px;
+    border-radius: 3px;
+    border: white;
+    background: #74B1DD;
+    color: white;
+    cursor: pointer;
+}
+
+.supprimer-favori {
+    width: 25%;
+    margin: 0 1.5%;
+    height: 21px;
+    border-radius: 3px;
+    border: white;
+    background: #ef2a2a;
+    color: white;
+    cursor: pointer;
+}
+
+.bouton-avis {
+    width: 25%;
+    margin: 0 1.5%;
+    height: 21px;
+    border-radius: 3px;
+    border: white;
+    background: #74B1DD;
+    color: white;
+    cursor: pointer;
+}
+
+.favori-avis {
+    width: 35%;
+    margin-top: 4.5%;
+    margin-left: 32.5%;
+    height: 21px;
+    border-radius: 3px;
+    border: white;
+    background: #f5cc26;
+    color: white;
+    cursor: pointer;
+}
+
+.line2 {
+    border-bottom: 1.7px solid rgb(232, 232, 232);
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 6.2%;
+}
 .nbrSentiment{
     display: flex;
     align-items: center;

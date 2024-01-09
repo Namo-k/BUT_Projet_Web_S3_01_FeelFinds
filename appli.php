@@ -303,47 +303,43 @@
         </div>
 
         <div id="ongletAvis" class="ongletDroite">
-
-        <p class="fermeAvis"> <img src="images/btn_retour.png" width="25px"> </p>
+            <p class="fermeAvis"> <img src="images/btn_retour.png" width="25px"> </p>
             <p id="titreAvis"> Ma sentithèque </p>
             <div class="line"></div>
-            
+                
             <p class="nomMarqueur">Nom marqueur</p>
             <div class="nbrAvis"></div>
             <div class="nbrSentiment"> </div>
             <div class="line"></div>
 
             <div class="avis">
-                <p class="sentiment">Sentiment : </p>
-                <p class="avis"> Mon ressenti : </p>
-                <p class="personne">Personne</p>
+                <p class="sentiment"> </p>
+                <p class="avis">  </p>
+                <p class="personne"> </p>
+                <div class="line"></div>
             </div>
         </div>
 
         <div id="ongletFavori" class="ongletDroite">
-            <p class="fermeFavori">< Retour</p>
-            <h3>Favori marqueur </h3>
-            <p class="nomPersonne">Nom Personne</p>
-            <div class="nbrAvis"></div>
-            <div class="nbrSentiment"></div>
-            
-            <div class="traitBlanc1"></div>
-            <div class="avis">
-                <p class="sentiment">Sentiment</p>
-                <p class="avis">Avis</p>
-                <!-- <p class="personne">Personne</p> -->
+            <p class="fermeFavori"> <img src="images/btn_retour.png" width="25px"> </p>
+            <p id="titreAvis"> Mes favoris </p>
+            <div class="line"> </div>
 
-            
+            <p class="nomPersonne"> </p>
+            <div class="nbrAvis"> </div>
+            <div class="nbrSentiment"> </div>
+            <div class="line"> </div>
+                
+            <div class="avis">
+                <p class="sentiment"> </p>
+                <p class="avis"> </p>
             </div>
         </div>
 
     </div>
 
-
-
     <!--appli carte-->
     <div id='map'></div>
-
 
     <script src="js/map.js"></script>
 </body>
