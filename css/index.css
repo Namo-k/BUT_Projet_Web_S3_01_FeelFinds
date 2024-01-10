@@ -182,3 +182,40 @@ button:active {
     cursor: pointer;
 }
 
+
+footer {
+    margin-top: 1%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: auto;
+}
+
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff2c; /* Couleur de fond - à personnaliser */
+    color: #ffffff; /* Couleur du texte - à personnaliser */
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: #385898; /* Couleur de fond au survol - à personnaliser */
+}

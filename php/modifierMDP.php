@@ -33,7 +33,9 @@ if (isset($_POST['submit'])) {
         $sql = "UPDATE user SET password ='$nv' where pseudo ='$user'";
         $result = $db->prepare($sql);
         $result->execute();
+        header('Location: profil.php');
         $success[]= "Le mot de passe a bien été modifiée.";
+
     }
     else{//mauvais mot de passe
         $errors[] = "L'ancien mot de passe est incorrect.";

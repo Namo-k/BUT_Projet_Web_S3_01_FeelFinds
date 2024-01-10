@@ -600,7 +600,7 @@ function ongletAvisChargement(){
                 'festif': 0
             };
 
-            $('#ongletAvis').toggle();
+            $('#ongletAvis').slideToggle();
 
             var nomMarqueur = data.nomMarqueur;
             var avis = data.avis;
@@ -703,7 +703,7 @@ function ongletFavoriChargement(){
                 'festif': 0
             };
 
-            $('#ongletFavori').toggle();
+            $('#ongletFavori').slideToggle();
 
             var avis = data.avis;
 

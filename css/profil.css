@@ -13,7 +13,7 @@ header {
     display: flex;
 }
 
-#container{
+#container {
     margin-left: 4%;
     margin-top: 1%;
     display: flex;
@@ -28,25 +28,23 @@ header {
 }
 
 #profil {
-    width: 500px;
+    width: 450px;
     margin: 2em;
-    padding: 15px ;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+    padding: 15px;
     margin-bottom: 6%;
-    height: 550px;
+    height: 570px;
     text-align: center;
     border-radius: 20px;
 }
 
-#personnaliser{
-    width: 800px;
+#personnaliser {
+    width: 700px;
     margin: 2em;
-    padding: 15px ;
-    background-color: #acacac;
+    padding: 15px;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
     margin-bottom: 6%;
-    height: 550px;
+    height: auto;
     text-align: center;
     border-radius: 20px;
 }
@@ -56,24 +54,27 @@ img {
     height: auto;
 }
 
-#logo{
+#logo {
     margin-left: 25%;
 }
-#titre{
-    margin-left: 40%;
+
+#titre {
+    margin-left: 42%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#retour{
+#retour {
     width: 300px;
     float: right;
     margin-left: 18%;
     text-align: center;
 }
-#retour a{
+
+#retour a {
     color: white;
 }
-#retour a:visited{
+
+#retour a:visited {
     color: white;
 }
 
@@ -96,11 +97,6 @@ li {
     margin-bottom: 10px;
 }
 
-#pprofil{
-    width: 200px;
-    height: 200px;
-}
-
 footer {
     background-color: #333;
     color: #fff;
@@ -120,27 +116,234 @@ footer {
     padding: 20px;
     border: 1px solid #ccc;
     z-index: 1;
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
     text-align: center;
-  }
-  
-  .close {
+}
+
+.close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #cc0000;
-  }
-
-  .error {
-	color: red;
 }
+
+.close:hover {
+    color: #cc0000;
+}
+
+.error {
+    color: red;
+}
+
 .success {
-	color: green;
+    color: green;
+}
+
+
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-image {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+}
+
+.overlay {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Filtre noir avec une opacité de 0.5 */
+    color: #fff;
+    /* Couleur du texte au survol */
+    text-align: center;
+    opacity: 0;
+    /* L'overlay est initialement invisible */
+    transition: opacity 0.3s ease-in-out;
+    /* Effet de transition de 0.3 seconde sur l'opacité */
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+    /* L'overlay devient visible au survol */
+}
+
+.formulaire-container {
+    border-radius: 20px;
+    display: none;
+    position: fixed;
+    margin-left: 16.5%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #3f0a09;
+    color: #ffffff;
+    border: 2px solid #af4c4c;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #ac201e;
+}
+
+
+
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4CAF50;
+}
+
+
+
+/* Ajout de styles pour les animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#container {
+    opacity: 0;
+}
+
+#container.animated {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+}
+
+#profil h1,
+#personnaliser h1 {
+    opacity: 0;
+}
+
+#profil h1.animated,
+#personnaliser h1.animated {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+
+/* Ajout de styles pour le formulaire */
+#profil .image-container,
+#profil .hover-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+#profil .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#profil .image-container:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+
+#chat-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#message-input {
+    width: 100%;
+    padding: 5px;
+}
+
+#send-button {
+    width: 100%;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
 }

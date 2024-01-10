@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#mdpModif').hide();
     $('#suppCompte').hide();
+    $('#pseudoModif').hide();
 
 $('#annulerCompte').on('click',function(){
     $('#suppCompte').hide();
@@ -28,4 +29,25 @@ $('#modifierMDP').on('click', function(){
 });
 
 
+$('#annulerAvatar').on('click', function(){
+    $('#formulaireContainer').hide();
 });
+
+
+$('#annulerPseudo').on('click', function(){
+    $('#pseudoModif').hide();
+    $('#modifierPseudo').show();
+});
+
+$('#modifierPseudo').on('click', function(){
+    $('#modifierPseudo').hide();
+    $('#pseudoModif').show();
+
+});
+
+});
+
+function ouvrirFormulaire() {
+    var formulaireContainer = document.getElementById("formulaireContainer");
+    formulaireContainer.style.display = "block";
+  }

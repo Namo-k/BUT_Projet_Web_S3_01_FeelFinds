@@ -4,10 +4,10 @@ session_start();
 include('connexionBd.php');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (!isset($_SESSION['id'])) {
-    echo json_encode(['error' => 'Utilisateur non connecté']);
-    exit;
-}
+// if (!isset($_SESSION['id'])) {
+//     echo json_encode(['error' => 'Utilisateur non connecté']);
+//     exit;
+// }
 
 if (!isset($_GET['sentiment'])) {
     echo json_encode(['error' => 'Le sentiment n\'a pas été spécifié']);
