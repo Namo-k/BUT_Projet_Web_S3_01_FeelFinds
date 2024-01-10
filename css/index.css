@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(250, 250, 250);
+    background-image: url(../images/fond_accueil.png);
+    background-size: cover;
     margin: 0;
     padding: 0;
     font-family : 'Inter';
@@ -21,61 +22,66 @@ p {
 }
 
 #container {
-    width: 70%;
-    margin-left: 8%;
-    margin-top: 2.5%;
+    width: 55%;
+    margin-left: 22.5%;
+    margin-top: 8%;
     height: 50%;
 }
 
 #titre {
-    width: 70%;
-    background-color: red;
+    width: 80%;
+    margin: 0 auto;
     text-transform: uppercase;
-    font-size: 65px;
+    font-size: 70px;
     font-family: Abril fatface;
 }
 
 #titre1 {
-    background: linear-gradient(#F00 10.4%, #aa5050 88%);
+    background: linear-gradient(180deg, #FFF 10.4%, #FFF 83.82%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #slogan {
     width: 50%;
-    margin-top: 2.5%;
-    color: #0F4A81;
-    font-size: 25px;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 2.4%;
+    color: #FFF;
+    font-size: 27.5px;
     font-style: italic;
+    text-align: center;
     font-weight: 400;
-    line-height: 38px;
+    line-height: 40px;
 }
 
 button {
+    margin: 0 auto;
     text-decoration: none;
     display: flex;
-    margin-top: 21px;
-    padding: 10px 47px;
+    margin-top: 27px;
+    padding: 10px 53px;
     align-items: center;
     text-align: center;
-    font-size: 19px;
+    font-size: 23px;
     letter-spacing: 1.3px;
-    color: #135B9F;
+    color: #FFFFFF;
     cursor: pointer;
+    background-color: transparent;
     transition: ease-out 0.5s;
-    border: 2px solid #135B9F;
+    border: 2px solid #FFF;
     border-radius: 10px;
-    box-shadow: inset 0 0 0 0 #135B9F;
+    box-shadow: inset 0 0 0 0 #74B1DD;
     text-decoration: none;
 }
 
 #marqueur {
-    margin-left: 12px;
+    margin-left: 17px;
 }
   
 button:hover {
     color: white;
-    box-shadow: inset 0 -100px 0 0 #135B9F;
+    box-shadow: inset 0 -100px 0 0 #74b1ddcd;
 }
   
 button:active {
@@ -85,45 +91,56 @@ button:active {
 #presentation {
     width: 40%;
     /* margin: 80px auto; */
-    margin-top: 80px;
+    margin-top: 75px;
     margin-left: 30%;
     display : flex;
 }
 
 .bloc {
-    width: 41%;
+    width: 50%;
     margin-left: 21px;
     margin-right: 21px;
 }
 
 .logo_desc {
     width: 20%;
-    margin-bottom: 6px;
-    margin-left: 106px;
+    margin-bottom: 7px;
+    margin-left: 123.5px;
 }
 
 .titre_desc {
     color: #E43A3A;
+    width: 55%;
+    margin-top: 5%;
+    margin-left: 22.5%;
+    border-radius: 7px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.351);
     text-align: center;
     font-family: Patua One;
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .desc {
-    margin-top: 5%;
-    color: #0F4A81;
+    margin-top: 7%;
+    color: #ffffff;
     text-align: center;
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 17.3px;
+    line-height: 23px;
 }
 
-
-#map {
+#information {
     display: flex;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    width: 35%;
+    align-items: center;
+    margin-left: 43px;
+    margin-top: 30px;
+}
+
+#info_lieu {
+    margin-left: 1.2%;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
 }
 
 /* NAVBAR */
@@ -131,10 +148,10 @@ button:active {
 #navbar{
     display: flex;
     /* background-image: linear-gradient(180deg, #135B9F 0%, rgba(19, 91, 159, 0.00) 100%); */
-    background-color: #135B9F;
+    /* background-color: #135B9F; */
     padding: 20px;
     z-index: 10;
-    height: 60px;
+    height: 50px;
     justify-content: space-between;
 }
 
@@ -144,21 +161,24 @@ button:active {
     text-align: center;
     align-items: center;
     float: right;
+    margin-bottom: 10px;
 }
 
 #navbar a {
-    font-size: 18px;
-    padding: 10px 33px;
+    font-size: 19px;
+    padding: 10px 38px;
     color: white;
 }
 
 #navbar a:hover {
-    color: #1c5b95;
+    color: #74B1DD;
     font-weight: 500;
     transition: 0.5s;
     transition: all 0.4s ease-in-out;
 }
 
 #logo {
-    margin-left: 20px;
+    margin-left: 10px;
+    cursor: pointer;
 }
+

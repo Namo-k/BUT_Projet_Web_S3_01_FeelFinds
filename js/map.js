@@ -283,8 +283,6 @@ map.on('load', () => {
                     'festif': 0
                 };
 
-
-
                 avis.forEach(function (avisItem) {
 
                     console.log("avisItem");
@@ -292,8 +290,8 @@ map.on('load', () => {
                     var avisBlock = $('<div>');
                     // avisBlock.append('<p>Sentiment : ' + avisItem.Sentiment + '</p>');
                     avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
-                    avisBlock.append('<p>Avis : ' + avisItem.Avis + '</p>');
-                    avisBlock.append('<p>Auteur : ' + (avisItem.nomUser.trim() !== '' ? avisItem.nomUser : 'Anonyme') + '</p>');
+                    avisBlock.append('<p> Avis : ' + avisItem.Avis + '</p>');
+                    avisBlock.append('<p> Auteur : ' + (avisItem.nomUser.trim() !== '' ? avisItem.nomUser : 'Anonyme') + '</p>');
                     console.log(avisItem.Sentiment);
 
                     counts[avisItem.Sentiment.toLowerCase()]++;

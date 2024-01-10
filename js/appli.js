@@ -56,6 +56,7 @@ function retour() {
     document.getElementById("ongletFavori").style.display = "none";
     erreurAjout(false);
 }
+
 function typeWriter() {
     if (i < txt.length) {
         document.getElementById("typewriter").innerHTML += txt.charAt(i);
