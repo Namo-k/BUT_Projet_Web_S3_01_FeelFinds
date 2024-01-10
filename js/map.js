@@ -273,6 +273,7 @@ map.on('load', () => {
                 $('.avis').empty();
                 $('.nbrAvis').empty();
                 $('.nbrSentiment').empty();
+                $('#titreAvis').text("Informations");
 
                 var counts = {
                     'epoustouflant': 0,
@@ -289,13 +290,12 @@ map.on('load', () => {
                     console.log(avisItem);
                     var avisBlock = $('<div>');
                     // avisBlock.append('<p>Sentiment : ' + avisItem.Sentiment + '</p>');
-                    avisBlock.append('<img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
+                    avisBlock.append('<br> <img src="' + getImagePath(avisItem.Sentiment) + '" width="26px" class="emojis">');
                     avisBlock.append('<p> Avis : ' + avisItem.Avis + '</p>');
                     avisBlock.append('<p> Auteur : ' + (avisItem.nomUser.trim() !== '' ? avisItem.nomUser : 'Anonyme') + '</p>');
                     console.log(avisItem.Sentiment);
 
                     counts[avisItem.Sentiment.toLowerCase()]++;
-
 
                     //Bouton supression et modification
                     if (avisItem.nomUser === data.sessionName) {
@@ -315,7 +315,7 @@ map.on('load', () => {
                         erreurAjout(false);
                     }
 
-                    avisBlock.append('<div class="traitBlanc"></div>');
+                    avisBlock.append('<div class="line2"></div>');
 
                     $('.avis').append(avisBlock);
                     console.log(avisBlock);
@@ -327,8 +327,8 @@ map.on('load', () => {
 
                 for (var sentimentType in counts) {
                     if (counts.hasOwnProperty(sentimentType) && counts[sentimentType] > 0) {
-                        $('.nbrSentiment').append('<p> ' + counts[sentimentType] + ' </p>');
-                        $('.nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis"> ');
+                        $('.nbrSentiment').append('<p> ' + counts[sentimentType] + ' &nbsp </p>');
+                        $('.nbrSentiment').append('<img src="images/emoji_' + sentimentType.toLowerCase() + '.png" width="26px" class="emojis"> &nbsp &nbsp ');
                     }
                 }
 
