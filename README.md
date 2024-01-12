@@ -2,4 +2,4 @@
 Trouve tes sentiments grâce à FeelFinds !
 
 
-/!\ CODE PAS A JOUR VOUS POUVEZ ATTENDRE LA FIN DE SEM SVP
+/!\ CODE PAS A JOUR VOUS POUVEZ ATTENDRE LA FIN DE SEM SVP (MAX 23h normalement tout est push)
