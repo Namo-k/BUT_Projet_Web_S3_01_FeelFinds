@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     else {
     $user = $_SESSION['id'];
 
-    include('../auth/connexionBd.php');
+    include('../../auth/connexionBd.php');
     $sql = "SELECT * FROM user where pseudo ='$user'";
     $result = $db->prepare($sql);
     $result->execute();
@@ -36,5 +36,5 @@ if (isset($_POST['submit'])) {
 }
 // include 'profil.php';
 }
-header('Location: ../pages/pageProfil.php');
+header('Location: ../../pages/pageProfil.php');
 ?>

@@ -2,11 +2,6 @@
 //Script pour la fonctionnalité recentrer
 session_start();
 
-if (!isset($_SESSION['id'])) {
-    echo json_encode(['error' => 'Utilisateur non connecté']);
-    exit;
-}
-
 if (!isset($_GET['idSentiment'])) {
     echo json_encode(['error' => 'ID du sentiment non spécifié']);
     exit;

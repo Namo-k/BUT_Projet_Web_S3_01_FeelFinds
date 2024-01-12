@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 function loadMessages() {
     $.ajax({
-        url: 'php/php-profil/get/getMessages.php',
+        url: '../php-profil/get/getMessages.php',
         type: 'GET',
         success: function(response) {
             $('#messages').html(response);
@@ -21,7 +21,7 @@ function sendMessage() {
     var message = $('#message-input').val();
 
     $.ajax({
-        url: 'php/php-profil/ajout/sendMessage.php',
+        url: '../php-profil/ajout/sendMessage.php',
         type: 'POST',
         data: { message: message },
         success: function(response) {
