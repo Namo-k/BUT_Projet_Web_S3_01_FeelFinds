@@ -3,9 +3,9 @@
 try {
     //NE PAS EXECUTER CE FICHIER SVP
     //CA VA RAJOUTER DES MARQUEURS DEJA EXISTANT
-    include('connexionBd.php'); 
+    include('../php/auth/connexionBd.php');
 
-    $jsonData = file_get_contents('data/filteredData.json');
+    $jsonData = file_get_contents('../data/filteredData.json');
     $data = json_decode($jsonData);
 
     foreach ($data as $location) {

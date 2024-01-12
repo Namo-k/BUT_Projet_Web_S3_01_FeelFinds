@@ -1,7 +1,7 @@
 var filteredData = [];
 $.ajax({
     type: 'GET',
-    url: 'data/monumentsHistoriques.json',
+    url: '../data/monumentsHistoriques.json',
     dataType: 'json',
     success: function (data) {
         data.forEach(function (location) {

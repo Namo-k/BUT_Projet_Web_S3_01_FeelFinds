@@ -14,9 +14,10 @@ header {
 }
 
 #container {
-    margin-left: 4%;
+    /* margin-left: 4%; */
     margin-top: 1%;
     display: flex;
+    justify-content: center;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s, transform 1s;
@@ -40,7 +41,7 @@ header {
 #personnaliser {
     width: 700px;
     margin: 2em;
-    padding: 15px;
+    padding: 40px 15px 30px 15px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
     margin-bottom: 6%;
@@ -280,7 +281,8 @@ textarea:focus {
 
 #profil h1,
 #personnaliser h1 {
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
 }
 
 #profil h1.animated,

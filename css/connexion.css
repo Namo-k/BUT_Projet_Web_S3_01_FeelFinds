@@ -226,3 +226,9 @@ a {
 .errorConnexion {
 	color: red;
 }
+
+.disabled-button {
+	background-color: #ddd;
+	color: #888;
+	cursor: not-allowed;
+}

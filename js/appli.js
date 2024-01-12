@@ -23,8 +23,8 @@ window.onload = function () {
             $('.inputSentiment').val(sentiments[i].nom);
         });
     }
-
-    document.getElementById("btn_ajouter").addEventListener("click", ajouter);
+    
+    $("#btn_ajouter").click(ajouter);
     $(".btn_retour").click(retour);
 }
 
@@ -36,6 +36,7 @@ function init() {
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
     document.getElementById("btnAnnulerFiltre").style.display = "none";
     document.getElementById("ongletFavori").style.display = "none";
+    document.getElementById("ongletInfoMarqueur").style.display = "none";
 
 }
 
@@ -43,9 +44,10 @@ function ajouter() {
     document.getElementById("ongletContaint").style.display = "none";
     document.getElementById("ongletAvis").style.display = "none";
     document.getElementById("ongletFavori").style.display = "none";
+    document.getElementById("ongletInfoMarqueur").style.display = "none";
     document.getElementById("ongletAjouter").style.display = "block";
-    $("#ongletAjouter #msgErreurAjoutSentiment").hide();
-    $('select[name="nomMarqueur"]').val("");
+    document.getElementById("msgErreurAjoutSentiment").style.display = "none";
+    document.querySelector('select[name="nomMarqueur"]').value = "";    
 }
 
 function retour() {
@@ -54,6 +56,7 @@ function retour() {
     document.getElementById("ongletModifier").style.display = "none";
     document.getElementById("ongletAjouterMarqueur").style.display = "none";
     document.getElementById("ongletFavori").style.display = "none";
+    document.getElementById("ongletInfoMarqueur").style.display = "none";
     erreurAjout(false);
 }
 

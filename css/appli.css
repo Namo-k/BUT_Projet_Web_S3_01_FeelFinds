@@ -473,15 +473,7 @@ nav li:hover .sub-menu {
     display: flex;
 }
 
-.fermeAvis {
-    cursor: pointer;
-    position: fixed;
-    float: left;
-    margin-left: 28px;
-    margin-top: 20.5px;
-}
-
-.fermeFavori {
+.fermeOnglet {
     cursor: pointer;
     position: fixed;
     float: left;
@@ -498,7 +490,7 @@ nav li:hover .sub-menu {
     margin-block-end: 8px;
 }
 
-#titreAvis {
+.titreAvis {
     margin-bottom: 20px;
     font-family: 'Patua One';
     font-size: 21px;
