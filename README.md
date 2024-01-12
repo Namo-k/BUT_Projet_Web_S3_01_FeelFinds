@@ -2,4 +2,4 @@
 Trouve tes sentiments grâce à FeelFinds !
 
 
-/!\ CODE PAS A JOUR
+/!\ CODE PAS A JOUR VEUILLEZ ATTENDRE LA FIN DE SEM SVP
