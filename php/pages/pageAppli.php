@@ -80,7 +80,7 @@
         <div id="onglet">
             <div id="presentation">
                 <div id="logo">
-                    <a href="index.html"><img src="../../images/logo.png" width="200px"></a>
+                    <a href="../../index.php"><img src="../../images/logo.png" width="200px"></a>
                 </div>
                 <div id="slogan">
                     <p id="typewriter"> P</p>

@@ -39,7 +39,7 @@
 <body>
 
     <header>
-        <a href="../../index.html"><img src="../../images/icon2.png" width="80" height="40" id="logo" /></a>
+        <a href="../../index.php"><img src="../../images/icon2.png" width="80" height="40" id="logo" /></a>
         <h1 id="titre">Profil</h1>
         <div id="retour">
             <a href="pageAppli.php"><img src="../../images/retourapp.png" width="60" height="30" style="margin-left: 40%;"/></a>
