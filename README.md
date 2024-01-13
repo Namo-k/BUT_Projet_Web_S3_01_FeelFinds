@@ -14,18 +14,20 @@
 
 ---------------
 
-## Présentation du projet
+### Présentation du projet
 
 Application WEB de type full munie d'un fond de carte interactive qui permet à des utilisateurs **d’explorer des lieux culturels** et **pouvoir ajouter des sentiments** (emojis et ressentis) sur ceux-ci, à l’idée d’un réseau social.
 
+---------------
 
-## Pages réalisées
+### Pages réalisées
 
 - La page d'accueil ✅
 - La page de connexion ✅
 - La page d’application ✅
 - La page de profil ✅
 
+---------------
 
 ### Quelques informations
 
