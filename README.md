@@ -5,6 +5,8 @@
 
 <h4 align="center"> /!\ IMPORTANT : Ce README n'est pas notre rapport. Veuillez le trouvez sur le repo sous format PDF. /!\ <h4>
 
+---------------
+
 ## L'Équipe :
 - KALIAMOORTHY Namodacane - 203
 - LUTETE-NTOTO Junior - 210
