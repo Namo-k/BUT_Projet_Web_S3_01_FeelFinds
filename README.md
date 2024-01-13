@@ -36,6 +36,9 @@ Application WEB de type full munie d'un fond de carte interactive qui permet à 
   - Pour l'importer : Crée une table bd_feelfinds puis importer le fichier sql
 - Pour lancer le projet : Vous devez avoir un outils comme XAMPP qui a un serveur Apache et MySQL
 - Version de PHP : 8.2.12 / Type de Serveur : MariaDB et MySQL
+- Pour se connecter aux comptes déjà existants :
+  - Identifiant : Prenom
+  - Mot de passe : Prenom77!
 
 
 
