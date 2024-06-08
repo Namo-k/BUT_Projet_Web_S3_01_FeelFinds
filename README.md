@@ -2,6 +2,7 @@
 
 <h2 align="center"> Web - Projet S3.01 : FeelFinds </h2>
 <h3 align="center"><i>Trouve tes sentiments grâce à FeelFinds !</i></h3>
+<h3 align="center"><i>En cliquant ici : <a href="https://feelfinds.000webhostapp.com/"> FeelFinds </a></i></h3>
 
 <h4 align="center"> /!\ IMPORTANT : Ce README n'est pas notre rapport. Veuillez le trouvez sur le repo sous format PDF. /!\ <h4>
 
